@@ -175,7 +175,8 @@ $(function () {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 1,
-                    dots: true
+                    dots: true,
+                    arrows: false
                 }
             }
         ]
