@@ -1,0 +1,196 @@
+/************ basics ************/
+
+/****** fonts ******/
+
+body.ribbit,
+body.ribbit h1,
+body.ribbit h2,
+body.ribbit h3,
+body.ribbit h3 a,
+body.ribbit h4,
+body.ribbit h5,
+body.ribbit h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #2d2926;
+}
+body.ribbit h1,
+body.ribbit h2,
+body.ribbit h3 {
+    font-family: museo-slab, serif;
+    font-weight: 600;
+}
+body.ribbit h1 {
+     font-size: 42px;
+     line-height: 1.14;
+}
+body.ribbit h2 {
+    font-size: 26px;
+    line-height: 1.35;
+}
+body.ribbit h3 {
+    font-size: 24px;
+    line-height: 1.25;
+}
+body.ribbit h3 a {
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+body.ribbit h4 {
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+body.ribbit .overline .HtmlContent > p:first-child > strong {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/****** buttons ******/
+
+.make-buttons em {
+    display: inline-block;
+    margin: -5px;
+}
+.make-buttons em a {
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+    font-style: normal;
+}
+.make-buttons em a,
+.btn {
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: 1px solid;
+}
+.make-buttons em a,
+.btn-primary,
+body.ribbit .btn-primary, 
+body.ribbit .btn-primary.active, 
+body.ribbit .btn.btn-success, 
+body.ribbit .btn-success.active, 
+body.ribbit .btn.btn-info, 
+body.ribbit .btn-info.active, 
+body.ribbit .open .dropdown-toggle.btn-primary, 
+body.ribbit .btn.btn-default[id*=btnDownload], 
+body.ribbit .open .dropdown-toggle.btn-success {
+    color: #2d2926;
+    border-color: #2d2926;
+    background: transparent;
+}
+.make-buttons em a:is(:hover, :focus),
+.btn-primary:is(:hover, :focus),
+body.ribbit .btn-primary:is(:hover, :focus), 
+body.ribbit .btn-primary.active:is(:hover, :focus), 
+body.ribbit .btn.btn-info:is(:hover, :focus), 
+body.ribbit .btn-info.active:is(:hover, :focus), 
+body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus), 
+body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus) {
+    color: #fff;
+    background-color: #2d2926;
+    border-color: #2d2926;
+}
+.make-buttons.purple em a,
+body.ribbit .btn.btn-success,
+body.ribbit .btn-success.active,
+body.ribbit .open .dropdown-toggle.btn-success {
+    color: #fff;
+    border-color: #682E86;
+    background-color: #682E86;
+}
+.make-buttons.purple em a:is(:hover, :focus),
+body.ribbit .btn.btn-success:is(:hover, :focus),
+body.ribbit .btn-success.active:is(:hover, :focus),
+body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus) {
+    background-color: transparent;
+    color: #682e86;
+    border-color: #682e86;
+}
+.make-buttons.grey em a,
+.btn-default {
+    color: #2D2926;
+    background-color: #EEF3F5;
+    border-color: #EEF3F5;
+}
+.make-buttons.grey em a:is(:hover, :focus),
+.btn-default:is(:hover, :focus) {
+    color: #2D2926;
+    background-color: #C8CDD0;
+    border-color: #C8CDD0;
+}
+.make-buttons.white em a {
+    color: #fff;
+    background: transparent;
+    color: #fff;
+}
+.make-buttons.white em a:is(:hover, :focus) {
+    background-color: #fff;
+    border-color: #fff;
+    color: #682E86;
+}
+
+/************ homepage ************/
+
+/****** search ******/
+
+body.ribbit .search-row {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+}
+.search-row > .col-md-4 {
+    max-width: 370px;
+}
+body.ribbit .row.search-row > .col-md-8 {
+    max-width: 700px;
+    margin-left: auto;
+}
+.search-row > .col-md-4 h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.search-row > .col-md-4 p {
+    margin-bottom: 0;
+}
+
+/*** search box ***/
+
+.SearchInputs .input-group {
+    position: relative;
+    display: block;
+}
+.SearchInputs .input-group .form-control {
+    height: 54px;
+    border-radius: 50px;
+    box-shadow: none;border: 1px solid #c8cdd0;
+    display: block;
+}
+.SearchInputs .form-control + .input-group-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 54px;
+    height: 54px;
+}
+.SearchInputs button[id*="SearchButton"] {
+    width: 54px;
+    height: 54px;
+    background: transparent;
+    border: none;
+    color: #682E86;
+    font-size: 24px;
+    line-height: 54px;
+    text-align: center;
+    padding: 0;
+    margin-left: 0;
+}
