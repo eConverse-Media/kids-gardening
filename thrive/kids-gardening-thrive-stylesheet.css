@@ -1,5 +1,12 @@
 /************ basics ************/
 
+/****** addressing wrapping of inline elements in <p> tags ******/
+
+p:has(>em>a),
+p:has(>img) {
+    margin-bottom: 0;
+}
+
 /****** fonts ******/
 
 body.ribbit,
@@ -59,6 +66,15 @@ body.ribbit .overline .HtmlContent>p:first-child>strong {
     font-weight: 600;
 }
 
+a,
+a:is(:hover, :focus),
+button,
+button:is(:hover, :focus),
+input,
+input:is(:hover, :focus) {
+    transition: .3s;
+}
+
 /*** re-setting Thrive text ***/
 
 body.ribbit .bootstrap-4 a.link-title,
@@ -96,6 +112,25 @@ body.ribbit .bootstrap-4 .text-meta {
     font-weight: 600;
     padding: 12px 20px;
     border: 1px solid;
+    border-radius: 40px;
+}
+.make-buttons.small em a,
+body.ribbit .btn.btn-sm {
+    padding: 5px 12px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 30px;
+}
+.make-buttons.xs em a,
+body.ribbit .btn.btn-xs {
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: 1.2;
 }
 
 .make-buttons em a,
@@ -239,6 +274,29 @@ body.ribbit .row.search-row>.col-md-8 {
     text-align: center;
     padding: 0;
     margin-left: 0;
+}
+
+/************ white tiles ************/
+
+.tile {
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+body.ribbit .tile h2 {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /************ content tiles ************/
@@ -541,6 +599,145 @@ body.ribbit .calendar-stamp .month {
 
 body.ribbit .layout-grid .layout-grid-cell:focus {
     outline: none;
+}
+
+/************ popular groups ************/
+
+/****** general community list styling ******/
+
+.community-list {
+    padding-bottom: 15px;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+.community-list > .col-md-7 {
+    padding-left: 0;
+}
+.community-list > .col-md-5 {
+    padding-right: 0;
+}
+.community-list > .col-md-5 > .row .pull-right {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: -5px;
+}
+body.ribbit .community-list .btn-community-stats-static,
+body.ribbit .community-list .btn-community-stats-static:is(:hover, :focus) {
+    padding: 4px 10px;
+    background-color: #EEF3F5;
+    border: none;
+    border-radius: 20px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    color: #2d2926;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px;
+    margin-bottom: 0;
+}
+body.ribbit .community-list .btn-community-stats-static .badge {
+    background: transparent;
+    color: #2d2926;
+    padding: 0;
+    min-width: 0;
+    font-size: 11px;
+    line-height: 14px;
+    top: 0;
+    font-weight: 500;
+    margin-right: 3px;
+}
+
+/****** homepage popular groups styling ******/
+
+.popular-groups div[id*="UpdatePanel"] {
+    padding: 20px;
+}
+.popular-groups .community-list {
+    display: flex;
+    flex-direction: column;
+}
+.popular-groups .community-list > .col-md-7 {
+    padding-right: 0;
+    width: 100%;
+}
+.popular-groups .community-list h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.popular-groups .community-list > .col-md-5 {
+    padding-left: 0;
+    width: 100%;
+}
+.popular-groups .community-list > .col-md-5 > .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.popular-groups .community-list > .col-md-5 > .row > .col-md-12 {
+    padding: 0;
+}
+.popular-groups .community-list > .col-md-5 > .row .pull-right {
+    float: none !important;
+}
+.popular-groups .pagination {
+    display: none;
+}
+
+/*** community stats buttons ***/
+
+.popular-groups .community-list .btn-community-stats-static[id*="DocumentsCount"] {
+    display: none;
+}
+.popular-groups .community-list .btn-community-stats-static::after {
+    font-family: 'Font Awesome 6 Pro';
+    color: #888B8D;
+    font-size: 13px;
+    line-height: 14px;
+    float: left;
+    font-weight: 900;
+    margin-right: 6px;
+}
+.popular-groups .community-list .btn-community-stats-static[id*="MembersCount"]::after {
+    content: '\f0c0';
+}
+.popular-groups .community-list .btn-community-stats-static[id*="DiscussionCount"]::after {
+    content: '\f086';
+}
+
+/*** icons ***/
+
+.popular-groups .community-list {
+    padding-left: 55px;
+    position: relative;
+}
+.popular-groups .community-list::before {
+    position: absolute;
+    font-family: 'Font Awesome 6 Pro';
+    color: #fff;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+}
+.popular-groups .community-list:nth-child(2)::before {
+    content: '\f713';
+    background-color: #EF8200;
+}
+.popular-groups .community-list:nth-child(3)::before {
+    content: '\f06c';
+    background-color: #00B8E4;
+}
+.popular-groups .community-list:nth-child(4)::before {
+    content: '\f1bb';
+    background-color: #2EB135;
 }
 
 /************ events ************/
