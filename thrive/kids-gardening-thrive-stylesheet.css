@@ -16,39 +16,61 @@ body.ribbit h6 {
     font-weight: 400;
     color: #2d2926;
 }
+
 body.ribbit h1,
 body.ribbit h2,
 body.ribbit h3 {
     font-family: museo-slab, serif;
     font-weight: 600;
 }
+
 body.ribbit h1 {
-     font-size: 42px;
-     line-height: 1.14;
+    font-size: 42px;
+    line-height: 1.14;
 }
+
 body.ribbit h2 {
     font-size: 26px;
     line-height: 1.35;
 }
+
 body.ribbit h3 {
     font-size: 24px;
     line-height: 1.25;
 }
-body.ribbit h3 a {
+
+body.ribbit h3 a,
+body.ribbit .bootstrap-4 a.link-title {
     font-size: 17px;
     line-height: 1.35;
     font-weight: 600;
 }
+
 body.ribbit h4 {
     font-size: 17px;
     line-height: 1.35;
     font-weight: 700;
 }
-body.ribbit .overline .HtmlContent > p:first-child > strong {
+
+body.ribbit .overline .HtmlContent>p:first-child>strong {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 14px;
     font-weight: 600;
+}
+
+/*** re-setting Thrive text ***/
+
+body.ribbit .bootstrap-4 a.link-title,
+body.ribbit .bootstrap-4 a.link-meta,
+body.ribbit .bootstrap-4 .text-meta {
+    color: #2d2926;
+}
+body.ribbit .bootstrap-4 * {
+    line-height: 1.5;
+}
+body.ribbit .bootstrap-4 .text-meta {
+    font-weight: 400;
 }
 
 /****** buttons ******/
@@ -57,12 +79,14 @@ body.ribbit .overline .HtmlContent > p:first-child > strong {
     display: inline-block;
     margin: -5px;
 }
+
 .make-buttons em a {
     display: inline-block;
     margin: 5px;
     text-decoration: none;
     font-style: normal;
 }
+
 .make-buttons em a,
 .btn {
     font-size: 14px;
@@ -73,33 +97,36 @@ body.ribbit .overline .HtmlContent > p:first-child > strong {
     padding: 12px 20px;
     border: 1px solid;
 }
+
 .make-buttons em a,
 .btn-primary,
-body.ribbit .btn-primary, 
-body.ribbit .btn-primary.active, 
-body.ribbit .btn.btn-success, 
-body.ribbit .btn-success.active, 
-body.ribbit .btn.btn-info, 
-body.ribbit .btn-info.active, 
-body.ribbit .open .dropdown-toggle.btn-primary, 
-body.ribbit .btn.btn-default[id*=btnDownload], 
+body.ribbit .btn-primary,
+body.ribbit .btn-primary.active,
+body.ribbit .btn.btn-success,
+body.ribbit .btn-success.active,
+body.ribbit .btn.btn-info,
+body.ribbit .btn-info.active,
+body.ribbit .open .dropdown-toggle.btn-primary,
+body.ribbit .btn.btn-default[id*=btnDownload],
 body.ribbit .open .dropdown-toggle.btn-success {
     color: #2d2926;
     border-color: #2d2926;
     background: transparent;
 }
+
 .make-buttons em a:is(:hover, :focus),
 .btn-primary:is(:hover, :focus),
-body.ribbit .btn-primary:is(:hover, :focus), 
-body.ribbit .btn-primary.active:is(:hover, :focus), 
-body.ribbit .btn.btn-info:is(:hover, :focus), 
-body.ribbit .btn-info.active:is(:hover, :focus), 
-body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus), 
+body.ribbit .btn-primary:is(:hover, :focus),
+body.ribbit .btn-primary.active:is(:hover, :focus),
+body.ribbit .btn.btn-info:is(:hover, :focus),
+body.ribbit .btn-info.active:is(:hover, :focus),
+body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus),
 body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus) {
     color: #fff;
     background-color: #2d2926;
     border-color: #2d2926;
 }
+
 .make-buttons.purple em a,
 body.ribbit .btn.btn-success,
 body.ribbit .btn-success.active,
@@ -108,6 +135,7 @@ body.ribbit .open .dropdown-toggle.btn-success {
     border-color: #682E86;
     background-color: #682E86;
 }
+
 .make-buttons.purple em a:is(:hover, :focus),
 body.ribbit .btn.btn-success:is(:hover, :focus),
 body.ribbit .btn-success.active:is(:hover, :focus),
@@ -116,27 +144,37 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus) {
     color: #682e86;
     border-color: #682e86;
 }
+
 .make-buttons.grey em a,
 .btn-default {
     color: #2D2926;
     background-color: #EEF3F5;
     border-color: #EEF3F5;
 }
+
 .make-buttons.grey em a:is(:hover, :focus),
 .btn-default:is(:hover, :focus) {
     color: #2D2926;
     background-color: #C8CDD0;
     border-color: #C8CDD0;
 }
+
 .make-buttons.white em a {
     color: #fff;
     background: transparent;
     color: #fff;
 }
+
 .make-buttons.white em a:is(:hover, :focus) {
     background-color: #fff;
     border-color: #fff;
     color: #682E86;
+}
+
+/****** row background ******/
+
+.bg-grey {
+    background-color: #EEF3F5;
 }
 
 /************ homepage ************/
@@ -148,18 +186,22 @@ body.ribbit .search-row {
     display: flex;
     align-items: center;
 }
-.search-row > .col-md-4 {
+
+.search-row>.col-md-4 {
     max-width: 370px;
 }
-body.ribbit .row.search-row > .col-md-8 {
+
+body.ribbit .row.search-row>.col-md-8 {
     max-width: 700px;
     margin-left: auto;
 }
-.search-row > .col-md-4 h4 {
+
+.search-row>.col-md-4 h4 {
     margin-top: 0;
     margin-bottom: 0;
 }
-.search-row > .col-md-4 p {
+
+.search-row>.col-md-4 p {
     margin-bottom: 0;
 }
 
@@ -169,19 +211,23 @@ body.ribbit .row.search-row > .col-md-8 {
     position: relative;
     display: block;
 }
+
 .SearchInputs .input-group .form-control {
     height: 54px;
     border-radius: 50px;
-    box-shadow: none;border: 1px solid #c8cdd0;
+    box-shadow: none;
+    border: 1px solid #c8cdd0;
     display: block;
 }
-.SearchInputs .form-control + .input-group-btn {
+
+.SearchInputs .form-control+.input-group-btn {
     position: absolute;
     right: 0;
     top: 0;
     width: 54px;
     height: 54px;
 }
+
 .SearchInputs button[id*="SearchButton"] {
     width: 54px;
     height: 54px;
@@ -193,4 +239,857 @@ body.ribbit .row.search-row > .col-md-8 {
     text-align: center;
     padding: 0;
     margin-left: 0;
+}
+
+/************ content tiles ************/
+
+.row-full .content-tile {
+    margin: 80px 0 0;
+}
+
+.content-tile.featured-member {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+    position: relative;
+    padding-top: 120px;
+    background-color: white;
+}
+
+.content-tile.featured-member {
+    display: inline-block;
+}
+
+.content-tile.featured-member::before {
+    content: '';
+    height: 120px;
+    width: 100%;
+    background: radial-gradient(51.32% 216.14% at 88.16% 44.33%, #80C826 0%, #61A50B 100%);
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+}
+
+.content-tile.featured-member::after {
+    content: '';
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/292e4b11-0501-4ef5-9527-38717cb139be/UploadedImages/featured-member.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+}
+
+.content-tile.featured-member>h2 {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 12px 20px 8px;
+    background-color: #FFD200;
+    font-size: 18px;
+    line-height: 1;
+    font-family: chaloops;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.content-tile.featured-member img {
+    margin-top: -80px;
+    position: relative;
+    z-index: 5;
+}
+
+.content-tile.featured-member .HtmlContent h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: museo-slab;
+    color: #2d2926;
+}
+
+.content-tile.featured-member .HtmlContent p {
+    font-size: 18px;
+    line-height: 22px;
+    color: #636667;
+    font-weight: 300;
+}
+
+/* Content Tile */
+
+.home .content-tile {
+    border-radius: 20px;
+}
+
+.content-tile .HtmlContent {
+    text-align: center;
+    padding: 30px;
+}
+
+.home .content-tile.brown {
+    background-color: #4f2c1d;
+}
+
+.home .content-tile.brown {
+    margin-top: 30px;
+}
+
+.content-tile.brown h2 {
+    margin-top: 0;
+    padding-top: 46px;
+    position: relative;
+}
+
+.content-tile.brown h2::before {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #FFD200;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content-tile.brown .HtmlContent h2,
+.content-tile.brown .HtmlContent p,
+.content-tile.brown em a {
+    color: white;
+    border-color: white;
+}
+
+.content-tile.brown img {
+    max-width: 232px;
+    margin: 0 auto;
+}
+
+.content-tile em a {
+    margin-top: 20px;
+}
+
+.content-tile.brown em a {
+    margin-top: 10px;
+}
+
+.content-tile .HtmlContent p:last-of-type {
+    margin-bottom: 0;
+}
+
+/************ activity feed ************/
+
+.FeedWidget {
+    padding-right: 24px;
+}
+
+body .feed-list .feed-title-filter {
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    margin-bottom: 20px;
+}
+
+body.ribbit:not(.interior) .row>div[class*=col-md-]>div.ContentItemReact.FeedWidget .row.heading {
+    border-bottom: none;
+    padding: 8px;
+}
+
+body .feed-list .feed-title-filter~.feed-cards-grid .layout-grid-cell:first-of-type .feed-item-row,
+body .feed-list .layout-grid-cell .feed-item-row {
+    border-radius: 8px;
+}
+
+.feed-item-row .images-preview {
+    border-radius: 8px 8px 0 0;
+}
+
+body .feed-item-row.card {
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+}
+
+body .layout-grid-overflow-hidden .layout-grid-cell {
+    margin-bottom: 20px !important;
+}
+
+body .layout-grid-overflow-hidden .layout-grid-cell {
+    padding: 0;
+}
+
+.bootstrap-4 .layout-grid-cell .p-3 {
+    padding: 20px !important;
+}
+.bootstrap-4 .layout-grid-cell .p-3.pt-1 {
+    padding-top: 4px !important;
+}
+
+.bootstrap-4 .layout-grid-cell .p-2 {
+    padding: 12px 40px !important;
+}
+
+.FeedWidget .hl-profile-avatar.lg img {
+    width: 80px;
+    height: 80px;
+}
+
+.feed-item-row>.p-3>.d-flex>.pe-2.me-1 {
+    margin-right: 20px !important;
+    padding-right: 0 !important;
+}
+
+/*** re-setting specific content styling ***/
+
+body.ribbit .FeedWidget .bootstrap-4 .font-size-xs {
+    font-size: 15px !important;
+}
+body.ribbit .bootstrap-4 a.link-meta {
+    font-weight: 500;
+}
+.feed-item-row.card > .p-3 > .text-secondary {
+    /* font-size: 15px !important; */
+    color: #2d2926 !important;
+}
+body.ribbit .FeedWidget .bootstrap-4 .bg-bg1,
+body.ribbit .FeedWidget .bootstrap-4 .bg-bg2 {
+    background-color: #EEF3F5 !important;
+}
+body.ribbit .FeedWidget .bootstrap-4 .bg-bg2 {
+    border-radius: 20px;
+    font-size: 11px;
+    padding: 4px 10px;
+    font-weight: 500;
+}
+body.ribbit .FeedWidget .bootstrap-4 .bg-bg2,
+body.ribbit .FeedWidget .bootstrap-4 .bg-bg2 * {
+    line-height: 1.4;
+}
+body.ribbit .FeedWidget .bootstrap-4 .bg-bg2.text-meta {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+
+}
+.FeedWidget .bootstrap-4 .text-secondary {
+    color: #2d2926 !important;
+}
+body.ribbit .tags-list a.label-search-tag {
+    border: none;
+}
+.feed-item-row .justify-content-between .btn-ghost + a.link-standalone {
+    color: #2D2926;
+    font-size: 15px !important;
+}
+
+/* icon colours */
+
+.FeedWidget .fa-calendar-alt {
+    color: #EF8200 !important;
+}
+.FeedWidget .fa-comment {
+    color: #00B8E4 !important;
+}
+.FeedWidget .fa-megaphone {
+    color: #2EB135 !important;
+}
+.FeedWidget .fa-newspaper {
+    color: #BF0D3E !important;
+}
+.FeedWidget .fa-books {
+    color: #682E86 !important;
+}
+
+/* date blocks */
+
+body.ribbit .calendar-stamp {
+    border: none;
+    border-radius: 50%;
+    background-color: #682E86;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+body.ribbit .calendar-stamp .month, 
+body.ribbit .calendar-stamp .date {
+    line-height: 1;
+    color: #fff;
+    margin: 0;
+}
+body.ribbit .calendar-stamp .date {
+    font-family: 'chaloops', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+body.ribbit .calendar-stamp .month {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* 'show more' link */
+
+.FeedWidget .feed-item-row button.btn-link {
+    text-decoration: underline;
+    font-weight: 500;
+    color: #2d2926 !important;
+}
+
+/* removing the outline on focus for the grid cells as it's hardly visible and only happens if you right-click to inspect */
+
+body.ribbit .layout-grid .layout-grid-cell:focus {
+    outline: none;
+}
+
+/************ events ************/
+.featured-resources .library-list,
+.event-wrapper .HLEventList ul:not(.dropdown-menu) li {
+    background-color: #fff;
+    /* box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03); */
+    border-radius: 20px;
+    position: relative;
+    padding-top: 180px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.featured-resources .library-list .img-container,
+.HLEventList div[id*="ContentPanel"] .img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.featured-resources .slick-track,
+.HLEventList .slick-track {
+    display: flex;
+    margin: 0 -15px;
+}
+
+.featured-resources .slick-track>a,
+.HLEventList .slick-track>a {
+    height: auto;
+}
+
+.featured-resources .slick-track>a,
+.event-wrapper .HLEventList .slick-track>a {
+    margin-top: 30px;
+    margin-bottom: 33px;
+    transition: 0.3s;
+}
+
+.featured-resources .slick-track>a:hover,
+.featured-resources .slick-track>a:focus,
+.event-wrapper .HLEventList .slick-track>a:hover,
+.event-wrapper .HLEventList .slick-track>a:focus {
+    margin-top: 26px;
+    margin-bottom: 37px;
+    transition: 0.3s;
+}
+
+.featured-resources .slick-track>a:hover h3 a,
+.featured-resources .slick-track>a:focus h3 a,
+.event-wrapper .HLEventList .slick-track>a:hover h3 a,
+.event-wrapper .HLEventList .slick-track>a:focus h3 a {
+    color: #636667;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.featured-resources .slick-track>a .library-list,
+.HLEventList .slick-track>a li {
+    height: 100%;
+    padding-bottom: 0;
+}
+
+.featured-resources .slick-arrow,
+.event-wrapper .HLEventList .slick-arrow {
+    padding: 14px 16px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: 0;
+    position: absolute;
+    bottom: -46px;
+    left: calc(50% - 295px);
+    z-index: 5;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-resources .next-arrow,
+.event-wrapper .HLEventList .next-arrow {
+    left: calc(50% - 235px);
+}
+
+.featured-resources .slick-arrow i,
+.event-wrapper .HLEventList .slick-arrow i {
+    color: #4F2C1D;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+}
+
+.featured-resources .prev-arrow i::before,
+.event-wrapper .HLEventList .prev-arrow i::before {
+    content: '\f060';
+}
+
+.featured-resources .next-arrow i::before,
+.event-wrapper .HLEventList .next-arrow i::before {
+    content: '\f061';
+}
+
+.event-wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.event-wrapper h2 {
+    color: #2D2926;
+}
+
+.event-wrapper .HLEventList .btn-group>a:first-of-type {
+    background-color: #000;
+    border-color: #000;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.event-wrapper .HLEventList .btn-group>a:last-of-type {
+    background-color: #000;
+    border-color: #000;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.event-wrapper .HLEventList .heading .col-md-12 h2 {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.event-wrapper .HLEventList .heading .col-md-12 h2::before {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #FFD200;
+    left: 15px;
+    top: -12px;
+    position: absolute;
+}
+
+.event-wrapper .HLEventList .heading h3 {
+    margin-bottom: 0;
+}
+
+.event-wrapper .HLEventList h2 .add-event-button {
+    float: right;
+}
+
+.event-wrapper .HLEventList h2 .add-event-button>.form-group {
+    margin-bottom: 0;
+}
+
+.event-wrapper .HLEventList h2,
+.home .featured-resources h2 {
+    font-size: 26px;
+}
+
+.event-wrapper .HLEventList {
+    position: relative;
+}
+
+.event-wrapper .HLEventList::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 600px);
+    background: #EEF3F5;
+    z-index: 5;
+}
+
+.HLEventList ul li .title-row .col-md-3,
+.HLEventList ul li .img-container .date-block .calendar-day {
+    display: none;
+}
+
+.HLEventList ul li .img-container .date-block {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    max-width: 80px;
+    padding: 9px 8px !important;
+    background: #682E86;
+    border-radius: 70px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03);
+    transition: 0.3s;
+}
+
+.HLEventList ul li:hover .img-container .date-block,
+.HLEventList ul li:focus .img-container .date-block {
+    background: #EF8200;
+    transition: 0.3s;
+}
+
+.HLEventList ul li .img-container .date-block .calendary-number span {
+    font-family: 'Chaloops';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 48px;
+    color: white;
+}
+
+.HLEventList ul li .img-container .date-block .calendar-month {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.ContentUserControl .HLEventList,
+.HLEventList .Content {
+    padding: 0;
+    border: 0;
+}
+
+.ContentUserControl .HLEventList {
+    padding-top: 96px;
+    padding-bottom: 80px;
+}
+.featured-resources .slick-slide, .event-wrapper .HLEventList .slick-slide {
+	opacity: 0.2;
+}
+
+.featured-resources .slick-slide.slick-active, .event-wrapper .HLEventList .slick-slide.slick-active, .event-wrapper .HLEventList .slick-slide:only-of-type {
+	opacity: 1;
+}
+
+.event-wrapper .ContentUserControl .HLEventList {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.event-wrapper .HLEventList .heading h2,
+.event-wrapper .HLEventList div[id*="BottomLink"] {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-wrapper .HLEventList .event-description {
+    display: none;
+}
+
+.event-wrapper .HLEventList .title-row .col-md-9 div:nth-of-type(3) {
+    display: block;
+    height: 44px;
+    overflow-y: hidden;
+    color: #2d2926;
+    font-size: 15px;
+    line-height: 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-top: 3px;
+    margin-bottom: 6px;
+}
+
+.event-wrapper .HLEventList .title-row .col-md-9 p {
+    margin: 0;
+}
+
+.event-wrapper .HLEventList ul a {
+    color: unset;
+}
+
+.event-wrapper .HLEventList h3 a {
+    color: #2D2926;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.home .slick-slider {
+    padding-top: 0;
+}
+
+.event-wrapper .HLEventList .Content .col-md-12 br {
+    display: none;
+}
+
+.event-wrapper .HLEventList div:nth-of-type(4),
+.event-wrapper .HLEventList .timeAgoFormat {
+    background: #F5F7F8;
+    border: 1px solid #E4E8EB;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 2px 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #636667;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+.event-wrapper .HLEventList div:nth-of-type(4)::before {
+    content: '\f3c5';
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 12px;
+    line-height: 1;
+    color: #636667;
+    display: inline-block;
+    margin-right: 3px;
+    font-weight: 700;
+}
+
+.event-wrapper .HLEventList .timeAgoFormat::before {
+    content: '\f017';
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 12px;
+    line-height: 1;
+    color: #636667;
+    display: inline-block;
+    margin-right: 3px;
+    font-weight: 700;
+}
+
+.event-wrapper .HLEventList ul li>.row .col-md-2 {
+    display: none;
+}
+
+.event-wrapper .HLEventList ul li>.row .col-md-10 {
+    width: 100%;
+    padding: 20px 20px 26px !important;
+}
+
+.event-wrapper .HLEventList ul li>.row .col-md-10 .title-row .col-md-9 {
+    width: 100%;
+}
+
+.home .ContentUserControl .HLLandingControl.HLEventList {
+    margin-bottom: 0;
+}
+
+.event-wrapper .HLEventList .btn-group > a:first-of-type {
+	background-color: #000;
+	border-color: #000;
+	border-top-left-radius: 40px;
+	border-bottom-left-radius: 40px;
+}
+
+.event-wrapper .HLEventList .btn-group > a:last-of-type {
+	background-color: #000;
+	border-color: #000;
+	border-top-right-radius: 40px;
+	border-bottom-right-radius: 40px;
+}
+
+.event-wrapper .HLEventList .heading .col-md-12 h2 {
+	position: relative;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.event-wrapper .HLEventList .heading .col-md-12 h2::before {
+	content: '';
+	width: 50px;
+	height: 4px;
+	background-color: #FFD200;
+	left: 15px;
+	top: -12px;
+	position: absolute;
+}
+
+.event-wrapper .HLEventList .heading h3 {
+	margin-bottom: 0;
+}
+
+.event-wrapper .HLEventList h2 .add-event-button {
+	float: right;
+}
+
+.event-wrapper .HLEventList h2 .add-event-button > .form-group {
+	margin-bottom: 0;
+}
+
+.event-wrapper .HLEventList h2, .home .featured-resources h2 {
+	font-size: 26px;
+}
+
+.event-wrapper .HLEventList {
+	position: relative;
+}
+
+.HLEventList ul li .title-row .col-md-3, .HLEventList ul li .img-container .date-block .calendar-day {
+	display: none;
+}
+
+.HLEventList ul li .img-container .date-block {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	max-width: 80px;
+	padding: 9px 8px !important;
+	background: #682E86;
+	border-radius: 70px;
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03);
+	transition: 0.3s;
+}
+
+.HLEventList ul li:hover .img-container .date-block, .HLEventList ul li:focus .img-container .date-block { 
+	background: #EF8200;
+	transition: 0.3s;
+ }
+
+.HLEventList ul li .img-container .date-block .calendary-number span { 
+	font-family: 'Chaloops';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 42px;
+	line-height: 48px;
+	color: white;
+ }
+
+ .HLEventList ul li .img-container .date-block .calendar-month { 
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: white;
+  }
+
+.ContentUserControl .HLEventList, .HLEventList .Content {
+	padding: 0;
+	border: 0;
+}
+
+.ContentUserControl .HLEventList {
+	padding-top: 96px;
+	padding-bottom: 80px;
+}
+
+.event-wrapper .HLEventList .heading h2, .event-wrapper .HLEventList div[id*="BottomLink"] {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.event-wrapper .HLEventList .event-description {
+	display: none;
+}
+
+.event-wrapper .HLEventList .title-row .col-md-9 div:nth-of-type(3) {
+	display: block;
+	height: 44px;
+	overflow-y: hidden;
+	color: #2d2926;
+	font-size: 15px;
+	line-height: 22px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	padding-top: 3px;
+	margin-bottom: 6px;
+}
+
+.event-wrapper .HLEventList .title-row .col-md-9 p {
+	margin: 0;
+}
+
+.event-wrapper .HLEventList ul a {
+	color: unset;
+}
+
+.event-wrapper .HLEventList h3 a {
+	color: #2D2926;
+	font-size: 20px;
+	transition: 0.3s;
+}
+
+.home .slick-slider {
+	padding-top: 0;
+}
+
+.event-wrapper .HLEventList .Content .col-md-12 br {
+	display: none;
+}
+
+.event-wrapper .HLEventList div:nth-of-type(4), .event-wrapper .HLEventList .timeAgoFormat {
+	background: #F5F7F8;
+	border: 1px solid #E4E8EB;
+	box-sizing: border-box;
+	border-radius: 20px;
+	padding: 2px 6px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: #636667;
+	line-height: 20px;
+	letter-spacing: 1px;
+	font-family: Montserrat;
+	text-transform: uppercase;
+	margin-right: 6px;
+	margin-bottom: 6px;
+}
+
+.event-wrapper .HLEventList div:nth-of-type(4)::before {
+	content: '\f3c5';
+	font-family: 'Font Awesome 5 Pro';
+	font-size: 12px;
+	line-height: 1;
+	color: #636667;
+	display: inline-block;
+	margin-right: 3px;
+	font-weight: 700;
+}
+
+.event-wrapper .HLEventList .timeAgoFormat::before {
+	content: '\f017';
+	font-family: 'Font Awesome 5 Pro';
+	font-size: 12px;
+	line-height: 1;
+	color: #636667;
+	display: inline-block;
+	margin-right: 3px;
+	font-weight: 700;
+}
+
+.event-wrapper .HLEventList ul li > .row .col-md-2 {
+	display: none;
+}
+
+.event-wrapper .HLEventList ul li > .row .col-md-10 {
+	width: 100%;
+	padding: 20px 20px 26px !important;
+}
+
+.event-wrapper .HLEventList ul li > .row .col-md-10 .title-row .col-md-9 { 
+	width: 100%;
+}
+
+#MPOuterMost #MPOuter #MainCopy_ContentWrapper .event-wrapper .HLEventList {
+    filter: none;
+    background: transparent;
+    border-radius: 0;
 }
