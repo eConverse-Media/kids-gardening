@@ -67,6 +67,7 @@ body.ribbit h3 {
     line-height: 1.25;
 }
 
+body.ribbit .HLLandingControl h3,
 body.ribbit h3 a,
 body.ribbit .bootstrap-4 a.link-title {
     font-size: 17px;
@@ -164,7 +165,8 @@ body.ribbit .btn.btn-info,
 body.ribbit .btn-info.active,
 body.ribbit .open .dropdown-toggle.btn-primary,
 body.ribbit .btn.btn-default[id*=btnDownload],
-body.ribbit .open .dropdown-toggle.btn-success {
+body.ribbit .open .dropdown-toggle.btn-success,
+.HLLandingControl div[id*="BottomLink"] .btn-default {
     color: var(--ui-black);
     border-color: var(--ui-black);
     background: transparent;
@@ -177,7 +179,8 @@ body.ribbit .btn-primary.active:is(:hover, :focus),
 body.ribbit .btn.btn-info:is(:hover, :focus),
 body.ribbit .btn-info.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus),
-body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus) {
+body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus),
+.HLLandingControl div[id*="BottomLink"] .btn-default:is(:hover, :focus) {
     color: #fff;
     background-color: var(--ui-black);
     border-color: var(--ui-black);
@@ -227,10 +230,43 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus) {
     color: var(--primary-purple);
 }
 
+/* 'more' buttons on widgets */
+
+.HLLandingControl div[id*="BottomLink"] .col-md-12 {
+    padding: 0;
+}
+
 /****** row background ******/
 
-.bg-grey {
+.bg-grey,
+body.ribbit:not(.interior).bodyBackground,
+body.ribbit.interior.bodyBackground {
     background-color: var(--ui-white-grey);
+}
+#MPOuterMost #MPOuter .bg-white {
+    background-color: #fff;
+    padding-top: 90px;
+    padding-bottom: 85px;
+    position: relative;
+}
+.bg-white::before,
+.bodyBackground .bg-white::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: 100% 100%;
+    display: block;
+    height: 32px;
+}
+.bg-white::before {
+    top: -32px;
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/bg-white-top.svg');
+}
+.bodyBackground .bg-white::after {
+    bottom: 0;
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/bg-white-bottom.svg');
 }
 
 /************ homepage ************/
@@ -322,7 +358,7 @@ body.ribbit .ContentUserControl.tile .HLLandingControl .row.heading h2 {
     margin-top: 0;
     margin-bottom: 0;
 }
-body.ribbit #MPOuterMost .ContentUserControl.tile .HLLandingControl .row.heading {
+body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .row.heading {
     padding: 0;
     border: none;
 }
@@ -330,6 +366,17 @@ body.ribbit #MPOuterMost .ContentUserControl.tile .HLLandingControl {
     filter: none;
     border-radius: 10px;
     background: transparent;
+}
+body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .row {
+    padding: 0;
+}
+body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .Content {
+    padding: 20px;
+}
+.tile .HLLandingControl ul li {
+    padding: 0 0 15px 0;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 /************ content tiles ************/
@@ -776,8 +823,52 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 }
 .popular-groups .community-list:nth-child(4)::before {
     content: '\f1bb';
-    /* background-color: var(--primary-green); */
     background-color: var(--primary-green);
+}
+
+/************ funding opportunities ************/
+
+.funding-opportunities .HLLandingControl ul li {
+    display: flex;
+    flex-direction: row;
+}
+.funding-opportunities .HLLandingControl ul li .img-container {
+    width: 50px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+.funding-opportunities .HLLandingControl ul li .title-row {
+    width: calc(100% - 60px);
+}
+#MPOuterMost #MPOuter #MainCopy_ContentWrapper .funding-opportunities .HLLandingControl ul li .title-row {
+    padding: 0;
+}
+.funding-opportunities .HLLandingControl ul li .content-row {
+    display: none;
+}
+.funding-opportunities .HLLandingControl ul li .title-row h3 {
+    margin-bottom: 0;
+}
+.funding-opportunities .HLLandingControl ul li .title-row h5 br {
+    display: none;
+}
+.funding-opportunities .HLLandingControl ul li .title-row h5 {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.funding-opportunities .HLLandingControl ul li .title-row h5 span {
+    color: #000 !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 22px !important;
 }
 
 /************ events ************/
