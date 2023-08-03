@@ -1,3 +1,24 @@
+:root {
+    --ui-black: #2d2926;
+    --ui-grey: #888B8D;
+    --ui-light-grey: #C8CDD0;
+    --ui-white-grey: #EEF3F5;
+    --primary-brown: #4F2C1D;
+    --secondary-brown: #7C4D3A;
+    --primary-purple: #682E86;
+    --secondary-purple: #A74DC3;
+    --primary-blue: #00B8E4;
+    --secondary-blue: #9ADBE8;
+    --primary-green: #2EB135;
+    --secondary-green: #78BE20;
+    --primary-yellow: #FFD200;
+    --secondary-yellow: #FCE122;
+    --primary-orange: #EF8200;
+    --secondary-orange: #F2AF32;
+    --primary-red: #BF0D3E;
+    --secondary-red: #E70F47;
+}
+
 /************ basics ************/
 
 /****** addressing wrapping of inline elements in <p> tags ******/
@@ -21,7 +42,7 @@ body.ribbit h6 {
     font-size: 15px;
     line-height: 1.5;
     font-weight: 400;
-    color: #2d2926;
+    color: var(--ui-black);
 }
 
 body.ribbit h1,
@@ -80,7 +101,7 @@ input:is(:hover, :focus) {
 body.ribbit .bootstrap-4 a.link-title,
 body.ribbit .bootstrap-4 a.link-meta,
 body.ribbit .bootstrap-4 .text-meta {
-    color: #2d2926;
+    color: var(--ui-black);
 }
 body.ribbit .bootstrap-4 * {
     line-height: 1.5;
@@ -144,8 +165,8 @@ body.ribbit .btn-info.active,
 body.ribbit .open .dropdown-toggle.btn-primary,
 body.ribbit .btn.btn-default[id*=btnDownload],
 body.ribbit .open .dropdown-toggle.btn-success {
-    color: #2d2926;
-    border-color: #2d2926;
+    color: var(--ui-black);
+    border-color: var(--ui-black);
     background: transparent;
 }
 
@@ -158,8 +179,8 @@ body.ribbit .btn-info.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus),
 body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus) {
     color: #fff;
-    background-color: #2d2926;
-    border-color: #2d2926;
+    background-color: var(--ui-black);
+    border-color: var(--ui-black);
 }
 
 .make-buttons.purple em a,
@@ -167,8 +188,8 @@ body.ribbit .btn.btn-success,
 body.ribbit .btn-success.active,
 body.ribbit .open .dropdown-toggle.btn-success {
     color: #fff;
-    border-color: #682E86;
-    background-color: #682E86;
+    border-color: var(--primary-purple);
+    background-color: var(--primary-purple);
 }
 
 .make-buttons.purple em a:is(:hover, :focus),
@@ -176,22 +197,22 @@ body.ribbit .btn.btn-success:is(:hover, :focus),
 body.ribbit .btn-success.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus) {
     background-color: transparent;
-    color: #682e86;
-    border-color: #682e86;
+    color: var(--primary-purple);
+    border-color: var(--primary-purple);
 }
 
 .make-buttons.grey em a,
 .btn-default {
-    color: #2D2926;
-    background-color: #EEF3F5;
-    border-color: #EEF3F5;
+    color: var(--ui-black);
+    background-color: var(--ui-white-grey);
+    border-color: var(--ui-white-grey);
 }
 
 .make-buttons.grey em a:is(:hover, :focus),
 .btn-default:is(:hover, :focus) {
-    color: #2D2926;
-    background-color: #C8CDD0;
-    border-color: #C8CDD0;
+    color: var(--ui-black);
+    background-color: var(--ui-light-grey);
+    border-color: var(--ui-light-grey);
 }
 
 .make-buttons.white em a {
@@ -203,13 +224,13 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus) {
 .make-buttons.white em a:is(:hover, :focus) {
     background-color: #fff;
     border-color: #fff;
-    color: #682E86;
+    color: var(--primary-purple);
 }
 
 /****** row background ******/
 
 .bg-grey {
-    background-color: #EEF3F5;
+    background-color: var(--ui-white-grey);
 }
 
 /************ homepage ************/
@@ -251,7 +272,7 @@ body.ribbit .row.search-row>.col-md-8 {
     height: 54px;
     border-radius: 50px;
     box-shadow: none;
-    border: 1px solid #c8cdd0;
+    border: 1px solid var(--ui-light-grey);
     display: block;
 }
 
@@ -268,7 +289,7 @@ body.ribbit .row.search-row>.col-md-8 {
     height: 54px;
     background: transparent;
     border: none;
-    color: #682E86;
+    color: var(--primary-purple);
     font-size: 24px;
     line-height: 54px;
     text-align: center;
@@ -285,7 +306,10 @@ body.ribbit .row.search-row>.col-md-8 {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-body.ribbit .tile h2 {
+body.ribbit .tile h2,
+body.ribbit .ContentUserControl.tile .HLLandingControl h2,
+body.ribbit .ContentUserControl.tile .HLLandingControl .heading h2,
+body.ribbit .ContentUserControl.tile .HLLandingControl .row.heading h2 {
     padding: 15px 20px;
     border-bottom: 1px solid rgba(0,0,0,0.15);
     color: #000;
@@ -297,6 +321,15 @@ body.ribbit .tile h2 {
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 0;
+}
+body.ribbit #MPOuterMost .ContentUserControl.tile .HLLandingControl .row.heading {
+    padding: 0;
+    border: none;
+}
+body.ribbit #MPOuterMost .ContentUserControl.tile .HLLandingControl {
+    filter: none;
+    border-radius: 10px;
+    background: transparent;
 }
 
 /************ content tiles ************/
@@ -348,7 +381,7 @@ body.ribbit .tile h2 {
     transform: translate(-50%, -50%);
     margin: 0;
     padding: 12px 20px 8px;
-    background-color: #FFD200;
+    background-color: var(--primary-yellow);
     font-size: 18px;
     line-height: 1;
     font-family: chaloops;
@@ -366,7 +399,7 @@ body.ribbit .tile h2 {
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: museo-slab;
-    color: #2d2926;
+    color: var(--ui-black);
 }
 
 .content-tile.featured-member .HtmlContent p {
@@ -388,7 +421,7 @@ body.ribbit .tile h2 {
 }
 
 .home .content-tile.brown {
-    background-color: #4f2c1d;
+    background-color: var(--primary-brown);
 }
 
 .home .content-tile.brown {
@@ -405,7 +438,7 @@ body.ribbit .tile h2 {
     content: '';
     width: 50px;
     height: 4px;
-    background: #FFD200;
+    background: var(--primary-yellow);
     position: absolute;
     top: 30px;
     left: 50%;
@@ -505,11 +538,11 @@ body.ribbit .bootstrap-4 a.link-meta {
 }
 .feed-item-row.card > .p-3 > .text-secondary {
     /* font-size: 15px !important; */
-    color: #2d2926 !important;
+    color: var(--ui-black) !important;
 }
 body.ribbit .FeedWidget .bootstrap-4 .bg-bg1,
 body.ribbit .FeedWidget .bootstrap-4 .bg-bg2 {
-    background-color: #EEF3F5 !important;
+    background-color: var(--ui-white-grey) !important;
 }
 body.ribbit .FeedWidget .bootstrap-4 .bg-bg2 {
     border-radius: 20px;
@@ -527,32 +560,32 @@ body.ribbit .FeedWidget .bootstrap-4 .bg-bg2.text-meta {
 
 }
 .FeedWidget .bootstrap-4 .text-secondary {
-    color: #2d2926 !important;
+    color: var(--ui-black) !important;
 }
 body.ribbit .tags-list a.label-search-tag {
     border: none;
 }
 .feed-item-row .justify-content-between .btn-ghost + a.link-standalone {
-    color: #2D2926;
+    color: var(--ui-black);
     font-size: 15px !important;
 }
 
 /* icon colours */
 
 .FeedWidget .fa-calendar-alt {
-    color: #EF8200 !important;
+    color: var(--primary-orange) !important;
 }
 .FeedWidget .fa-comment {
-    color: #00B8E4 !important;
+    color: var(--primary-blue) !important;
 }
 .FeedWidget .fa-megaphone {
-    color: #2EB135 !important;
+    color: var(--primary-green) !important;
 }
 .FeedWidget .fa-newspaper {
-    color: #BF0D3E !important;
+    color: var(--primary-red) !important;
 }
 .FeedWidget .fa-books {
-    color: #682E86 !important;
+    color: var(--primary-purple) !important;
 }
 
 /* date blocks */
@@ -560,7 +593,7 @@ body.ribbit .tags-list a.label-search-tag {
 body.ribbit .calendar-stamp {
     border: none;
     border-radius: 50%;
-    background-color: #682E86;
+    background-color: var(--primary-purple);
     width: 80px;
     height: 80px;
     text-align: center;
@@ -592,7 +625,7 @@ body.ribbit .calendar-stamp .month {
 .FeedWidget .feed-item-row button.btn-link {
     text-decoration: underline;
     font-weight: 500;
-    color: #2d2926 !important;
+    color: var(--ui-black) !important;
 }
 
 /* removing the outline on focus for the grid cells as it's hardly visible and only happens if you right-click to inspect */
@@ -625,14 +658,14 @@ body.ribbit .layout-grid .layout-grid-cell:focus {
 body.ribbit .community-list .btn-community-stats-static,
 body.ribbit .community-list .btn-community-stats-static:is(:hover, :focus) {
     padding: 4px 10px;
-    background-color: #EEF3F5;
+    background-color: var(--ui-white-grey);
     border: none;
     border-radius: 20px;
     font-size: 11px;
     font-style: normal;
     font-weight: 500;
     line-height: 14px;
-    color: #2d2926;
+    color: var(--ui-black);
     display: flex;
     flex-direction: row-reverse;
     margin: 5px;
@@ -640,7 +673,7 @@ body.ribbit .community-list .btn-community-stats-static:is(:hover, :focus) {
 }
 body.ribbit .community-list .btn-community-stats-static .badge {
     background: transparent;
-    color: #2d2926;
+    color: var(--ui-black);
     padding: 0;
     min-width: 0;
     font-size: 11px;
@@ -648,6 +681,12 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     top: 0;
     font-weight: 500;
     margin-right: 3px;
+}
+
+/*** hiding the nbsp after titles ***/
+
+.community-list h3 {
+    margin-right: -7px;
 }
 
 /****** homepage popular groups styling ******/
@@ -692,7 +731,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 }
 .popular-groups .community-list .btn-community-stats-static::after {
     font-family: 'Font Awesome 6 Pro';
-    color: #888B8D;
+    color: var(--ui-grey);
     font-size: 13px;
     line-height: 14px;
     float: left;
@@ -729,15 +768,16 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 }
 .popular-groups .community-list:nth-child(2)::before {
     content: '\f713';
-    background-color: #EF8200;
+    background-color: var(--primary-orange);
 }
 .popular-groups .community-list:nth-child(3)::before {
     content: '\f06c';
-    background-color: #00B8E4;
+    background-color: var(--primary-blue);
 }
 .popular-groups .community-list:nth-child(4)::before {
     content: '\f1bb';
-    background-color: #2EB135;
+    /* background-color: var(--primary-green); */
+    background-color: var(--primary-green);
 }
 
 /************ events ************/
@@ -827,7 +867,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 
 .featured-resources .slick-arrow i,
 .event-wrapper .HLEventList .slick-arrow i {
-    color: #4F2C1D;
+    color: var(--primary-brown);
     font-size: 20px;
     line-height: 20px;
     font-family: 'Font Awesome 5 Pro';
@@ -850,7 +890,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 }
 
 .event-wrapper h2 {
-    color: #2D2926;
+    color: var(--ui-black);
 }
 
 .event-wrapper .HLEventList .btn-group>a:first-of-type {
@@ -877,7 +917,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     content: '';
     width: 50px;
     height: 4px;
-    background-color: #FFD200;
+    background-color: var(--primary-yellow);
     left: 15px;
     top: -12px;
     position: absolute;
@@ -912,7 +952,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     bottom: 0;
     left: 0;
     width: calc(50% - 600px);
-    background: #EEF3F5;
+    background: var(--ui-white-grey);
     z-index: 5;
 }
 
@@ -927,7 +967,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     right: 6px;
     max-width: 80px;
     padding: 9px 8px !important;
-    background: #682E86;
+    background: var(--primary-purple);
     border-radius: 70px;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03);
     transition: 0.3s;
@@ -935,7 +975,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 
 .HLEventList ul li:hover .img-container .date-block,
 .HLEventList ul li:focus .img-container .date-block {
-    background: #EF8200;
+    background: var(--primary-orange);
     transition: 0.3s;
 }
 
@@ -997,7 +1037,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     display: block;
     height: 44px;
     overflow-y: hidden;
-    color: #2d2926;
+    color: var(--ui-black);
     font-size: 15px;
     line-height: 22px;
     font-family: 'Montserrat', sans-serif;
@@ -1015,7 +1055,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 }
 
 .event-wrapper .HLEventList h3 a {
-    color: #2D2926;
+    color: var(--ui-black);
     font-size: 20px;
     transition: 0.3s;
 }
@@ -1110,7 +1150,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 	content: '';
 	width: 50px;
 	height: 4px;
-	background-color: #FFD200;
+	background-color: var(--primary-yellow);
 	left: 15px;
 	top: -12px;
 	position: absolute;
@@ -1146,14 +1186,14 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 	right: 6px;
 	max-width: 80px;
 	padding: 9px 8px !important;
-	background: #682E86;
+	background: var(--primary-purple);
 	border-radius: 70px;
 	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03);
 	transition: 0.3s;
 }
 
 .HLEventList ul li:hover .img-container .date-block, .HLEventList ul li:focus .img-container .date-block { 
-	background: #EF8200;
+	background: var(--primary-orange);
 	transition: 0.3s;
  }
 
@@ -1201,7 +1241,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 	display: block;
 	height: 44px;
 	overflow-y: hidden;
-	color: #2d2926;
+	color: var(--ui-black);
 	font-size: 15px;
 	line-height: 22px;
 	font-family: 'Montserrat', sans-serif;
@@ -1219,7 +1259,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 }
 
 .event-wrapper .HLEventList h3 a {
-	color: #2D2926;
+	color: var(--ui-black);
 	font-size: 20px;
 	transition: 0.3s;
 }
