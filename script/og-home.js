@@ -1,13 +1,5 @@
 $(function () {
 
-    // Funding Posted TO Replacement 
-
-    $('.funding.tabs ul li').each(function () {
-        var postedTo = $(this).find('h5 a');
-        $(postedTo).text('Funding Opportunities')
-        $(postedTo).attr('href', 'https://community.kidsgardening.org/browse/funding-opportunities');
-    });
-
     // Community List 
 
     $('.popular-communities .community-list').each(function () {
@@ -35,7 +27,6 @@ $(function () {
         var h3AnchorHref = $(h3Anchor).attr('href');
         $(this).wrap('<a href="' + h3AnchorHref + '"></a>');
     });
-
 
     // handle most active members
     $('.home .featured-resources div[id*="ListViewContent"]').slick({
@@ -214,8 +205,5 @@ $(function () {
         var imgSrc = $(this).find($(img)).attr('src');
         $(htmlContent).css('background-image', 'url("' + imgSrc + '")');
         $(img).hide();
-        var anchorHref = $(this).find('a').attr('href');
-        $(htmlContent).wrap('<a href="' + anchorHref + '" target="_blank"></a>');
-
     });
 });
