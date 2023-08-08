@@ -59,7 +59,7 @@ $(function () {
 
     $('.HLWelcome .Welcome .imgButton').after('<button type="button" class="my-dashboard-button">My Dashboard</button>');
 
-    $('.my-dashboard-button').parent().click(function () {
+    $('.my-dashboard-button').click(function () {
 
         $('.member-dashboard-wrap').addClass('open');
 

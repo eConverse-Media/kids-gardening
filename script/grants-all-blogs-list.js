@@ -93,7 +93,7 @@ $(function () {
     });
 
     // handle filtered grants entries
-    $('.filtered-grants .SearchResults.HLLandingControl ul li').each(function () {
+    $('.filtered-grants div[id*="BlogContents"] .blogs-block').each(function () {
         var self = $(this),
             title = $(self).find("h3"),
             href = $(self)
@@ -137,13 +137,10 @@ $(function () {
                 );
             }
 
-            // Adding the Item Rating 
-
-            var likes = $(resp).find('.ItemRatingCommentPanel div[id*="likeRatingContainer"] a:first-of-type').text();
 
             // Adding the Hashtags 
 
-            var tags = $(resp).find('.blogs-block .user-content-hashtag');
+            // var tags = $(resp).find('.blogs-block .user-content-hashtag');
 
             if ($(img).attr('src') === undefined) {
                 $(self).find(".img-container").addClass("no-image");
@@ -172,9 +169,13 @@ $(function () {
             $(self).append($(deadline));
 
 
+            // Adding the Item Rating 
+
+            var likes = $(self).find('.ItemRatingCommentPanel div[id*="likeRatingContainer"] a:first-of-type').text();
+
             $(self).append($('<span class="likes-display">' + likes + '</span>'));
 
-            $(self).prepend($(tags));
+            // $(self).prepend($(tags));
 
         }
 
@@ -191,7 +192,7 @@ $(function () {
         }
     });
     // handle filtering
-    $('.filtered-grants .SearchResults.HLLandingControl').prepend('<div class="dropdown-group"><div class="HtmlContent"></div></div>');
+    $('.filtered-grants ').prepend('<div class="dropdown-group"><div class="HtmlContent"></div></div>');
 
     makinFilters();
 
@@ -222,8 +223,8 @@ $(function () {
         $(selector).removeClass('open');
     });
 
-    $(".filtered-grants .SearchResults.HLLandingControl .Content > ul").isotope({
-        itemSelector: 'li',
+    $(".filtered-grants div[id*='BlogContents']").isotope({
+        itemSelector: '.blogs-block',
         layoutMode: 'fitRows'
     });
 
@@ -374,7 +375,7 @@ function updateFilters() {
 
     var filterVal = concatFilters(filters);
 
-    $('.filtered-grants .SearchResults.HLLandingControl .Content > ul ').isotope({ filter: filterVal });
+    $('.filtered-grants div[id*="BlogContents"]').isotope({ filter: filterVal });
 }
 
 function concatFilters(obj) {
@@ -583,5 +584,5 @@ function clearFilters() {
     });
 
     // show all items in the grid and reset filter dropdowns
-    $('.filtered-grants .SearchResults.HLLandingControl .Content > ul ').isotope({ filter: '*' });
+    $('.filtered-grants div[id*="BlogContents"] ').isotope({ filter: '*' });
 }

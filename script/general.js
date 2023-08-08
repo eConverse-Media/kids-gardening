@@ -104,7 +104,7 @@ function handleByLines() {
 
     });
 
-    $('.interior div:not(.featured) > div > .SearchResults.HLLandingControl ul li').each(function () {
+    $('.interior div:not(.featured):not(.filtered-grants) > div > .SearchResults.HLLandingControl ul li').each(function () {
         var self = $(this);
         var contentTags = $(self).find('div[id*="pnlTags"]');
 
@@ -175,7 +175,8 @@ $(function () {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 1,
-                    dots: true
+                    dots: true,
+                    arrows: true
                 }
             }
         ]
