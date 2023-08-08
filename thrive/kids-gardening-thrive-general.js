@@ -1,61 +1,4 @@
-function handleEvents() {
-    $('.HLEventList  div[id*="ContentPanel"] > .col-md-12 ul:not(.dropdown-menu) li').each(function () {
-        var dateThumbnail = $(this).find('.date-block');
-        var h3Anchor = $(this).find('h3 a');
-        var h3AnchorHref = $(h3Anchor).attr('href');
-        $(this).wrap('<a href="' + h3AnchorHref + '"></a>');
-        $(this).prepend('<div class="img-container"/>');
-        var imgContainer = $(this).find('.img-container');
-        var eventImage = $(this).find('.title-row .col-md-3 img');
-        var eventImageSrc = $(eventImage).attr('src');
-        $(imgContainer).css('background-image', 'url("' + eventImageSrc + '")');
-        $(imgContainer).prepend($(dateThumbnail));
-    });
 
-    $('.event-wrapper .HLEventList div[id*="ContentPanel"] > .col-md-12 ul:not(.dropdown-menu)').slick({
-        dots: false,
-        arrows: true,
-        infinite: true,
-        autoplay: false,
-        centerMode: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        centerPadding: 'calc(50% - 585px)',
-        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>',
-        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>',
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 2,
-                    centerPadding: '65px'
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: false,
-                    centerPadding: '0px'
-                }
-            }
-        ]
-    });
-
-    $('.event-wrapper .HLEventList ul li').each(function () {
-        var eventInfodiv = $(this).find('.col-md-10 .title-row .col-md-9');
-        $(eventInfodiv).contents().filter(function () { return this.nodeType === 3 }).wrap('<div class="event-description"></div>');
-
-        var date = $(this).find($('.timeAgoFormat'));
-        $(eventInfodiv).append($(date));
-    });
-}
 
 function handleFundingOpportunities() {
     $('.funding-opportunities ul li').each(function () {
@@ -117,7 +60,56 @@ function handleFundingOpportunities() {
     });
 }
 
+function handleResources() {
+
+    
+    $('.library-list > .col-md-12').each(function () {
+        // handle click event
+        var self = $(this),
+            link = $(self).find('h3 a'),
+            href = $(link).attr('href');
+
+        $(self).click(function () {
+            window.location.href = href;
+        });
+
+        // handle 'like' button
+
+        var rating = $(self).find('.ItemRatingCommentPanel');
+
+        $(rating).insertAfter($(self).find('.content-tags'));
+        $(rating).wrap('<div class="tags-and-rating" />');
+        
+        // handle tags
+
+        var tag = $(self).find('.label-search-tag[aria-label*="Type:"]:first-of-type')
+        var klass = $(tag).text();
+
+        klass = $.trim(klass);
+        klass = klass.toLowerCase();
+        klass = klass.replace(/\s/g, '-');
+        klass = klass.replace(/\//g, '-');
+
+        $(self).addClass(klass);
+
+        $(tag).insertBefore($(self).find('.ItemRatingCommentPanel'));
+
+    });
+
+    // create carousel
+    $('.featured-resources div[id*="ListViewContent"]').slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: 'calc(50% - 615px)',
+        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fa-light fa-arrow-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>'
+    });
+}
+
 $(function () {
-    handleEvents();
     handleFundingOpportunities();
+    handleResources();
 });
