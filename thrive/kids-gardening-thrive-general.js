@@ -126,9 +126,16 @@ function handleEvents() {
 
         var content = $(self).find('.title-row .col-md-9');
         
-        $(content).wrapInner('<div class="event-description" />');
-        $(content).find('.event-description > h3').insertBefore($(content).find('.event-description'));
-        $(content).find('.event-description > *').insertAfter($(content).find('.event-description'));
+        $(content).wrapInner('<div class="event-desc" />');
+        $(content).find('.event-desc > h3').insertBefore($(content).find('.event-desc'));
+        $(content).find('.event-desc > *').insertAfter($(content).find('.event-desc'));
+
+        // handle date blocks
+
+        var month = $(self).find('.date-block .calendar-month span').text();
+
+        month = month.substring(0, 3);
+        $(self).find('.date-block .calendar-month').text(month);
     });
 
     // create carousel

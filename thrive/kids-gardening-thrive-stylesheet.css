@@ -141,7 +141,8 @@ body.ribbit .bootstrap-4 .text-meta {
 }
 .make-buttons em a,
 .btn,
-#MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink {
+#MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default {
     font-size: 14px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -181,7 +182,7 @@ body.ribbit .btn-info.active,
 body.ribbit .open .dropdown-toggle.btn-primary,
 body.ribbit .btn.btn-default[id*=btnDownload],
 body.ribbit .open .dropdown-toggle.btn-success,
-.HLLandingControl div[id*="BottomLink"] .btn-default {
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default {
     color: var(--ui-black);
     border-color: var(--ui-black);
     background: transparent;
@@ -195,7 +196,7 @@ body.ribbit .btn.btn-info:is(:hover, :focus),
 body.ribbit .btn-info.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus),
 body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus),
-.HLLandingControl div[id*="BottomLink"] .btn-default:is(:hover, :focus) {
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default:is(:hover, :focus) {
     color: #fff;
     background-color: var(--ui-black);
     border-color: var(--ui-black);
@@ -251,6 +252,12 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus),
 
 .HLLandingControl div[id*="BottomLink"] .col-md-12 {
     padding: 0;
+}
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .col-md-12 {
+    padding: 0 !important;
+}
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] a:is(:hover, :focus) {
+    text-decoration: none;
 }
 
 /****** row background ******/
@@ -1084,6 +1091,7 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
     border: none;
     height: auto;
     display: flex;
+    flex-direction: column;
 }
 .featured-resources .library-list > .col-md-12,
 .event-wrapper .Content ul.slick-slider li > .row {
@@ -1093,6 +1101,9 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
     position: relative;
     display: flex;
     flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
 }
 .featured-resources .library-list > .col-md-12 {
     padding: 20px;
@@ -1168,9 +1179,6 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 
 /****** event images ******/
 
-.event-wrapper ul li > .row > .col-md-2 {
-    position: absolute;
-}
 .event-wrapper ul li > .row > .col-md-10 {
     width: 100%;
 }
@@ -1181,6 +1189,7 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 .event-wrapper ul li > .row > .col-md-10 .title-row .col-md-3,
 .event-wrapper ul li > .row > .col-md-10 .title-row .col-md-9 {
     width: 100%;
+    float: none;
 }
 .event-wrapper ul li > .row > .col-md-10 .title-row img {
     width: auto;
@@ -1193,12 +1202,104 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 .event-wrapper ul li > .row > .col-md-10 > .title-row > .col-md-9 {
     padding: 20px !important;
 }
-.event-wrapper ul li > .row > .col-md-10 > .title-row > .col-md-9 > .event-description {
+.event-wrapper ul li > .row > .col-md-10 > .title-row > .col-md-9 > .event-desc {
     line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
+}
+
+/****** event date blocks ******/
+
+.event-wrapper ul li > .row > .col-md-2 {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+    width: auto;
+}
+.event-wrapper .date-block {
+    background: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.event-wrapper .date-block * {
+    line-height: 1;
+}
+.event-wrapper .date-block .calendary-number {
+    color: var(--primary-purple);
+    font-family: chaloops;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+}
+.event-wrapper .date-block .calendar-day {
+    display: none;
+}
+.event-wrapper .date-block .calendar-month {
+    color: var(--primary-purple);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/****** event h3 ******/
+
+#MPOuterMost #MPOuter .event-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#MPOuterMost #MPOuter .event-wrapper h3 a {
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--ui-black);
+}
+
+/****** event date + time ******/
+
+.event-wrapper p.break-word {
+    display: none;
+}
+.event-wrapper ul li .timeAgoFormat,
+.event-wrapper ul li div[id*="LocationPanel"] {
+    border-radius: 20px;
+    background: var(--ui-white-grey);
+    padding: 4px 10px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    color: var(--ui-black);
+    display: inline-block;
+}
+.event-wrapper ul li .timeAgoFormat {
+    margin-top: 20px;
+}
+.event-wrapper ul li .timeAgoFormat + div[id*="LocationPanel"] {
+    margin-top: 10px;
+}
+.event-wrapper ul li .timeAgoFormat::before,
+.event-wrapper ul li div[id*="LocationPanel"]::before {
+    font-family: 'Font Awesome 6 Pro';
+    color: var(--ui-black);
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: 900;
+}
+.event-wrapper ul li .timeAgoFormat::before {
+    content: '\f017';
+}
+.event-wrapper ul li div[id*="LocationPanel"]::before {
+    content: '\f3c5';
 }
 
 /****** arrows ******/
@@ -1244,7 +1345,8 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 
 /****** resources button ******/
 
-.resources-btn.make-buttons {
+.resources-btn.make-buttons,
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] {
     position: absolute;
     bottom: 75px;
     left: calc(50% - 600px);
