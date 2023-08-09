@@ -1280,60 +1280,38 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 #MPOuterMost #MPOuter .featured-opportunities {
     position: relative;
     z-index: 10;
-    margin-bottom: -250px;
-}
-
-/****** using the All Content List widget ******/
-
-
-#MPOuterMost #MPOuter .featured-opportunities .HLLandingControl {
-    background: transparent;
-    filter: none;
-}
-#MPOuterMost #MPOuter .featured-opportunities .row.heading {
-    display: none;
-}
-.featured-opportunities ul {
+    margin-bottom: 250px;
     display: flex;
-    margin: -15px;
 }
-#MPOuterMost #MPOuter .featured-opportunities ul li {
-    margin: 15px;
-    flex-basis: calc(50% - 30px);
+
+#MPOuterMost #MPOuter .featured-opportunities > .col-md-6 {
     flex-grow: 0;
     flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    margin-bottom: -250px;
+}
+.featured-opportunities > .col-md-6 > .ContentItemHtml {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
-    background: #fff;
+    position: relative;
 }
-.featured-opportunities ul li .img-container {
-    height: 220px;
-    border-radius: 10px;
-    background-size: cover;
+
+.featured-opportunities .HtmlContent > p:first-child:has(img) > img:first-child {
+    position: absolute;
+    top: -20px;
+    right: -20px;
 }
-.featured-opportunities .HLLandingControl.SearchResults ul li .row.title-row .col-sm-3.col-md-3.pull-right {
-    display: none;
-}
-.featured-opportunities .HLLandingControl.SearchResults ul li .row.title-row .col-md-9 {
-    width: 100%;
-}
-#MPOuterMost #MPOuter .featured-opportunities ul li h3 {
-    line-height: 1.35;
+body.ribbit .featured-opportunities h2 {
     margin-top: 30px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
-#MPOuterMost #MPOuter .featured-opportunities ul li h3 a {
-    font-family: museo-slab, serif;
-    color: #000;
-    font-size: 26px;
-    line-height: 1.35;
-    font-weight: 600;
-}
-#MPOuterMost #MPOuter .featured-opportunities ul li h5 br {
-    display: none;
-}
-#MPOuterMost #MPOuter .featured-opportunities ul li h5 {
-    font-weight: 500;
-    margin-top: 8px;
+body.ribbit .featured-opportunities h5 {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
