@@ -273,7 +273,7 @@ body.ribbit:not(.interior).bodyBackground {
     position: relative;
 }
 .bg-white::before,
-.bodyBackground .bg-white::after {
+.bodyBackground:not(.interior) .bg-white::after {
     content: '';
     position: absolute;
     left: 0;
@@ -287,14 +287,23 @@ body.ribbit:not(.interior).bodyBackground {
     top: -32px;
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/bg-white-top.svg');
 }
-.bodyBackground .bg-white::after {
+.bodyBackground:not(.interior) .bg-white::after {
     bottom: 0;
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/bg-white-bottom.svg');
+}
+.bodyBackground:not(.interior) .bg-white.page-end::after {
+    background-image: url('');
 }
 
 /************ homepage ************/
 
-/****** search ******/
+/************ removing extraneous padding ************/
+
+#MPOuterMost #MPOuter .row-wide:not([class*="v-padding"]) {
+    padding: 0;
+}
+
+/************ search ************/
 
 body.ribbit .search-row {
     padding: 0;
@@ -996,7 +1005,8 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 /****** titles ******/
 
 body.ribbit .resource-title h2,
-body.ribbit #MPOuterMost #MPOuter .event-wrapper h2 {
+body.ribbit #MPOuterMost #MPOuter .event-wrapper h2,
+.partners-title h2 {
     font-family: museo-slab, serif;
     font-size: 26px;
     font-style: normal;
@@ -1011,14 +1021,16 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper h2 {
 body.ribbit .resource-title h2 {
     color: #fff;
 }
-body.ribbit #MPOuterMost #MPOuter .event-wrapper .row.heading {
+body.ribbit #MPOuterMost #MPOuter .event-wrapper .row.heading,
+#MPOuterMost .resource-title {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
     border: none;
 }
 .resource-title h2::before,
-body.ribbit .event-wrapper h2::before {
+body.ribbit .event-wrapper h2::before,
+.partners-title h2::before {
     content: '';
     border-top: 6px solid var(--primary-yellow);
     width: 40px;
@@ -1416,4 +1428,183 @@ body.ribbit .featured-opportunities h2 {
 body.ribbit .featured-opportunities h5 {
     margin-top: 10px;
     margin-bottom: 20px;
+}
+
+/************ bottom carousel ************/
+
+#MPOuterMost #MPOuter .bottom-carousel {
+    margin-top: 80px;
+}
+#MPOuterMost .bottom-carousel > .col-md-12.slick-slider {
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    background-color: var(--primary-brown);
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/Dirt.png');
+    background-size: auto;
+    margin: 0;
+    border-radius: 10px;
+}
+#MPOuterMost .bottom-carousel .slick-track {
+    display: flex;
+}
+#MPOuterMost .bottom-carousel h2,
+#MPOuterMost .bottom-carousel h3,
+#MPOuterMost .bottom-carousel p {
+    color: #fff;
+}
+
+#MPOuterMost .bottom-carousel .bottom-slide {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 30px 50px;
+}
+.bottom-carousel .bottom-slide p:last-child {
+    margin-bottom: 0;
+}
+
+.bottom-carousel .bottom-slide.testimonial .img-container {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 30px;
+    overflow: hidden;
+}
+.bottom-carousel .bottom-slide.testimonial .img-container img {
+    width: 100%;
+    max-height: unset;
+}
+.bottom-carousel .bottom-slide.testimonial .HtmlContent {
+    width: calc(100% - 170px);
+}
+
+.bottom-carousel .bottom-slide.gardening-tip {
+    flex-direction: row-reverse;
+}
+.bottom-carousel .bottom-slide.gardening-tip .img-container {
+    width: 250px;
+    margin-left: 30px;
+}
+.bottom-carousel .bottom-slide.gardening-tip .HtmlContent {
+    width: calc(100% - 280px);
+}
+
+/****** arrows ******/
+
+.bottom-carousel .slick-arrow {
+    position: absolute;
+    border: none;
+    padding: 0;
+    background-color: var(--primary-yellow);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    color: var(--ui-black);
+    z-index: 10;
+    top: calc(50% - 20px);
+    border-radius: 50%;
+}
+.bottom-carousel .slick-arrow.prev-arrow {
+    left: -20px;
+}
+.bottom-carousel .slick-arrow.next-arrow {
+    right: -20px;
+}
+
+/************ ad space ************/
+
+.ad-space img {
+    border-radius: 10px;
+}
+.col-md-12 > .ad-space img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+.col-md-12 > .ad-space {
+    z-index: 10;
+    position: relative;
+}
+#MPOuterMost #MPOuter .col-md-12 > .ad-space {
+    margin-bottom: -60px;
+}
+
+/************ partners ************/
+
+#MPOuterMost #MPOuter .partners-title {
+    margin-top: 80px;
+}
+.partners-title h2 {
+    margin-bottom: 40px;
+}
+
+#MPOuterMost .partners > .col-md-12.slick-slider {
+    margin-bottom: 40px;
+}
+.partner {
+    padding: 0 15px;
+    display: flex;
+}
+.partner .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.partner p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--ui-black);
+}
+.partner p + p {
+    margin-top: 20px;
+}
+.partner img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/****** arrows ******/
+
+.partners .slick-arrow {
+    background: transparent;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid var(--ui-black);
+    color: var(--ui-black);
+    position: absolute;
+    z-index: 10;
+    top: -75px;
+    border-radius: 50%;
+}
+
+#MPOuterMost #MPOuter #MainCopy_ContentWrapper .slick-arrow {
+    margin-top: 0;
+}
+
+.partners .slick-arrow.next-arrow {
+    right: calc(50% - 600px);
+}
+.partners .slick-arrow.prev-arrow {
+    right: calc(50% - 550px);
+}
+.partners .slick-arrow:is(:hover, :focus) {
+    color: #fff;
+    background-color: var(--ui-black);
 }
