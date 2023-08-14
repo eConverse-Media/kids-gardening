@@ -294,6 +294,10 @@ body.ribbit:not(.interior).bodyBackground {
 .bodyBackground:not(.interior) .bg-white.page-end::after {
     background-image: url('');
 }
+#MPOuterMost #MPOuter .bg-purple {
+    background: linear-gradient(54deg, #5E257C 0%, #9747FF 100%);
+    padding-top: 40px;
+}
 
 /************ homepage ************/
 
@@ -302,6 +306,231 @@ body.ribbit:not(.interior).bodyBackground {
 #MPOuterMost #MPOuter .row-wide:not([class*="v-padding"]) {
     padding: 0;
 }
+
+/************ member dashboard ************/
+
+.memberhome .row-wide > div[class*="col-md-"][class*="section"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/****** profile snippet card ******/
+
+#MPOuterMost #MPOuter .ProfileSnippet {
+    background-color: transparent;
+}
+
+.profile-snippet-card.hl-widget-card.bg-alt-bg5 {
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+.profile-snippet-card.hl-widget-card .border-top {
+    border-top: none !important;
+}
+
+/*** badges ***/
+
+.profile-snippet-card.hl-widget-card .profile-badge-container {
+    justify-content: space-between;
+}
+.profile-snippet-card.hl-widget-card .profile-badge-container .stacked-badge-row {
+    justify-content: flex-start;
+}
+.profile-snippet-card.hl-widget-card .profile-badge-container .stacked-badge-row + a {
+    text-align: right !important;
+    align-items: end !important;
+}
+.profile-snippet-card.hl-widget-card .profile-badge-container .stacked-badge-row + a * {
+    color: #fff !important;
+    font-size: 15px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px
+}
+.profile-snippet-card .badge-container.stacked.stacked {
+    height: 42px;
+}
+
+/*** stats ***/
+
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-stats > a > .font-size-sm {
+    color: #fff;
+    font-size: 15px !important;
+    font-weight: 500;
+    line-height: 22px;
+}
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-stats > a > .font-weight-bold {
+    font-family: chaloops, serif;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/*** picture & name ***/
+
+.profile-snippet-card.hl-widget-card .profile-snippet-bio {
+    flex-direction: row !important;
+}
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-bio {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    justify-content: start;
+}
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-bio .font-weight-bold {
+    font-family: museo-slab, serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #fff;
+    margin-left: 30px;
+}
+
+/*** progress ***/
+
+#MPOuterMost .profile-snippet-progress {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+}
+#MPOuterMost .profile-snippet-progress > .my-2 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+#MPOuterMost .profile-snippet-progress .progress {
+    height: 16px;
+    background-color: #fff !important;
+    border-radius: 20px;
+}
+#MPOuterMost .profile-snippet-progress .progress-bar {
+    border-radius: 20px;
+    background-color: var(--primary-blue) !important;
+}
+
+/*** fixing padding & margins ***/
+
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-progress,
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .stacked-badge-row,
+.profile-snippet-card.hl-widget-card .profile-snippet-bio {
+    padding: 0 !important;
+}
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-progress,
+.profile-snippet-card.hl-widget-card .profile-snippet-bio {
+    margin-bottom: 24px;
+}
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-stats > a {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    margin-top: 12px;
+    align-items: start !important;
+    flex-direction: column-reverse !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#MPOuterMost #MPOuter .profile-snippet-card.hl-widget-card .profile-snippet-stats {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+#MPOuterMost #MPOuter .profile-snippet-card {
+    margin-bottom: 30px;
+}
+
+/************ link cards ************/
+
+#MPOuterMost #MPOuter .link-cards {
+    z-index: 10;
+    position: relative;
+}
+#MPOuterMost .link-cards > .col-md-12 {
+    display: flex;
+    margin: -15px -15px -65px -15px;
+}
+#MPOuterMost #MPOuter .link-cards .link-card {
+    margin: 0;
+}
+.link-card {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 20%;
+    padding: 15px;
+    display: flex;
+}
+.link-card .HtmlContent,
+.link-card .HtmlContent p {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.link-card .HtmlContent p {
+    margin-bottom: 0;
+}
+.link-card a {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    color: #000;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    border-top: 11px solid;
+    padding: 25px 20px 20px 20px;
+    text-align: center;
+}
+
+/****** borders ******/
+
+.link-card.orange a {
+    border-top-color: var(--primary-orange);
+}
+.link-card.green a {
+    border-top-color: var(--primary-green);
+}
+.link-card.yellow a {
+    border-top-color: var(--primary-yellow);
+}
+.link-card.blue a {
+    border-top-color: var(--primary-blue);
+}
+.link-card.red a {
+    border-top-color: var(--primary-red);
+}
+
+/****** icons******/
+
+.link-card i {
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.link-card.orange a i {
+    color: var(--primary-orange);
+}
+.link-card.green a i {
+    color: var(--primary-green);
+}
+.link-card.yellow a i {
+    color: var(--primary-yellow);
+}
+.link-card.blue a i {
+    color: var(--primary-blue);
+}
+.link-card.red a i {
+    color: var(--primary-red);
+}
+
 
 /************ search ************/
 
