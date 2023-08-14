@@ -51,6 +51,11 @@ body.ribbit h6 {
     color: var(--ui-black);
 }
 
+body *,
+.bootstrap-4 * {
+    line-height: 1.5;
+}
+
 body.ribbit h1,
 body.ribbit h2,
 body.ribbit h3 {
@@ -435,6 +440,86 @@ body.ribbit:not(.interior).bodyBackground {
 }
 #MPOuterMost #MPOuter .profile-snippet-card {
     margin-bottom: 30px;
+}
+
+/****** carousel ******/
+
+.hero-slider.slick-dotted {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.15);
+}
+
+.hero-slider.slick-dotted .slick-track {
+    display: flex;
+}
+.hero-slider.slick-dotted .hero-slide.slick-slide {
+    display: flex;
+    flex-direction: row-reverse;
+    height: auto;
+}
+#MPOuterMost #MPOuter .hero-slider.slick-dotted {
+    margin-bottom: 45px;
+}
+.hero-slide .img-container {
+    width: 42%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+.hero-slide .HtmlContent {
+    width: 58%;
+    padding: 20px 40px 20px 20px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+}
+.hero-slide .HtmlContent p:has(em) {
+    margin-top: auto;
+}
+.hero-slide .HtmlContent *:not(em a:is(:hover, :focus)) {
+    color: #fff;
+}
+.hero-slide .HtmlContent p:first-child,
+.hero-slide .HtmlContent p:last-child {
+    margin-bottom: 0;
+}
+.hero-slide .HtmlContent h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 1.25;
+}
+.hero-slide .HtmlContent p {
+    margin-bottom: 20px;
+}
+
+/*** arrows ***/
+
+.hero-slider .slick-arrow {
+    position: absolute;
+    bottom: 40px;
+    z-index: 10;
+    background-color: var(--primary-orange);
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+.hero-slider .slick-arrow.next-arrow {
+    right: calc(42% + 40px);
+}
+.hero-slider .slick-arrow.prev-arrow {
+    right: calc(42% + 90px);
 }
 
 /************ link cards ************/

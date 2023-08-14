@@ -38,8 +38,49 @@ function handlePartnerCarousel() {
     })
 }
 
+function handleHeroSlider() {
+
+    // handle slides
+
+    var heroSlides = $('.hero-slide').toArray(),
+        count = heroSlides.length;
+
+    for (var i = 0; i < count; i++) {
+
+        // handle slide number
+        var currSlide = heroSlides[i],
+            slideNum = i + 1;
+
+        $(currSlide).find('.HtmlContent').prepend('<p><strong>' + slideNum + '/' + count + '</strong></p>');
+
+        // handle image
+
+        var img = $(currSlide).find('img');
+
+        $(img).unwrap();
+        $(currSlide).prepend('<div class="img-container" />');
+
+        handleBgImage(currSlide, $(currSlide).find('.img-container'));
+        $(img).remove();
+    }
+
+    // create carousel
+
+    $('.hero-slide').wrapAll('<div class="hero-slider slick-dotted" />');
+    $('.hero-slider').slick({
+        arrows: true,
+        dots: false,
+        fade: true,
+        infinite: true,
+        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fa-light fa-arrow-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>'
+    });
+
+}
+
 $(function () {
     handleGroups();
     handleBottomSlider();
     handlePartnerCarousel();
+    handleHeroSlider();
 });
