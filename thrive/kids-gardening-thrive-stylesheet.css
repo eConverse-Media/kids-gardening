@@ -444,7 +444,7 @@ body.ribbit:not(.interior).bodyBackground {
 
 /****** carousel ******/
 
-.hero-slider.slick-dotted {
+.memberhome .hero-slider.slick-dotted {
     padding: 20px;
     border-radius: 10px;
     background-color: rgba(0,0,0,0.15);
@@ -457,6 +457,7 @@ body.ribbit:not(.interior).bodyBackground {
     display: flex;
     flex-direction: row-reverse;
     height: auto;
+    width: 100%;
 }
 #MPOuterMost #MPOuter .hero-slider.slick-dotted {
     margin-bottom: 45px;
@@ -496,6 +497,16 @@ body.ribbit:not(.interior).bodyBackground {
 .hero-slide .HtmlContent p {
     margin-bottom: 20px;
 }
+.hero-slide .HtmlContent h4 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#MPOuterMost .hero-slide .HtmlContent h4 {
+    color: var(--primary-yellow);
+}
 
 /*** arrows ***/
 
@@ -514,6 +525,9 @@ body.ribbit:not(.interior).bodyBackground {
     font-size: 24px;
     text-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
     color: #fff;
+}
+.home .hero-slider .slick-arrow {
+    bottom: 20px;
 }
 .hero-slider .slick-arrow.next-arrow {
     right: calc(42% + 40px);
@@ -572,6 +586,10 @@ body.ribbit:not(.interior).bodyBackground {
     border-top: 11px solid;
     padding: 25px 20px 20px 20px;
     text-align: center;
+}
+.link-card a:is(:hover, :focus) {
+    transform: translateY(-6px);
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06), 0px 4px 14px 0px rgba(0, 0, 0, 0.05);
 }
 
 /****** borders ******/
@@ -1056,6 +1074,11 @@ body.ribbit .calendar-stamp .month {
     font-weight: 500;
     color: var(--ui-black) !important;
 }
+.FeedWidget .feed-item-row button.btn-link:is(:hover, :focus) {
+    background: transparent;
+    color: var(--primary-brown) !important;
+    text-decoration: underline;
+}
 
 /* removing the outline on focus for the grid cells as it's hardly visible and only happens if you right-click to inspect */
 
@@ -1497,10 +1520,9 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
     content: '\f164';
     margin-right: 6px;
 }
-.featured-resources .library-list > .col-md-12 > .pull-right .ItemRatingCommentPanel .btn-sm:is(:hover, :focus) {
-    text-decoration: underline;
+.featured-resources .library-list .ItemRatingCommentPanel .btn-sm:is(:hover, :focus) {
+    color: var(--ui-grey);
     background: transparent;
-    color: var(--ui-black);
 }
 
 /****** event images ******/
@@ -1824,6 +1846,9 @@ body.ribbit .featured-opportunities h5 {
     z-index: 10;
     top: calc(50% - 20px);
     border-radius: 50%;
+}
+.bottom-carousel .slick-arrow:is(:hover, :focus) {
+    background-color: #D9B203;
 }
 .bottom-carousel .slick-arrow.prev-arrow {
     left: -20px;
