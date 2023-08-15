@@ -265,7 +265,7 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus),
     text-decoration: none;
 }
 
-/****** row background ******/
+/****** row backgrounds and resets ******/
 
 .bg-grey,
 body.ribbit:not(.interior).bodyBackground {
@@ -297,11 +297,15 @@ body.ribbit:not(.interior).bodyBackground {
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/bg-white-bottom.svg');
 }
 .bodyBackground:not(.interior) .bg-white.page-end::after {
-    background-image: url('');
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/footer-wave.svg');
 }
 #MPOuterMost #MPOuter .bg-purple {
     background: linear-gradient(54deg, #5E257C 0%, #9747FF 100%);
     padding-top: 40px;
+}
+#MPOuterMost  .row-wide > div[class*="col-md-"][class*="section"] {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /************ homepage ************/
@@ -314,10 +318,6 @@ body.ribbit:not(.interior).bodyBackground {
 
 /************ member dashboard ************/
 
-.memberhome .row-wide > div[class*="col-md-"][class*="section"] {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 /****** profile snippet card ******/
 
@@ -525,6 +525,9 @@ body.ribbit:not(.interior).bodyBackground {
     font-size: 24px;
     text-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
     color: #fff;
+}
+.hero-slider .slick-arrow:is(:hover, :focus) {
+    background-color: var(--primary-red);
 }
 .home .hero-slider .slick-arrow {
     bottom: 20px;
@@ -1914,6 +1917,9 @@ body.ribbit .featured-opportunities h5 {
     margin-left: auto;
     margin-right: auto;
 }
+.partner a {
+    display: inline-block;
+}
 
 /****** arrows ******/
 
@@ -1946,4 +1952,104 @@ body.ribbit .featured-opportunities h5 {
 .partners .slick-arrow:is(:hover, :focus) {
     color: #fff;
     background-color: var(--ui-black);
+}
+
+/************ footer ************/
+
+body.ribbit.memberhome #MPOuterFooter,
+body.ribbit.memberhome #FOOTER {
+    display: block !important;
+}
+#MPOuterFooter {
+    background-color: #EDEAE8;
+    padding: 0;
+    color: var(--ui-black);
+}
+#MPOuterFooter::after,
+#MPCopyright {
+    display: none;
+}
+#MPOuterMost #MPOuterFooter .footer-top-row {
+    padding: 50px 0;
+}
+#MPOuterMost #MPOuterFooter #FOOTER .footer-bottom-row {
+    padding: 10px 0;
+    background-color: rgba(124, 77, 58, 0.05);
+    max-width: 100%;
+}
+#MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide {
+    padding: 0;
+}
+#MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3,
+#MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide > .col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+}
+#MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3:first-child {
+    width: 25%;
+    margin-right: 7.5%;
+}
+#MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3:nth-child(2) {
+    width: 20%;
+    margin-right: 3%;
+}
+#MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3:nth-child(3) {
+    width: 33%;
+    margin-right: 3%;
+}
+.footer-top-row > .col-md-3:last-child {
+    width: 8.5%;
+}
+#FOOTER h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--ui-black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+#FOOTER a {
+    color: var(--ui-black);
+    text-decoration: none;
+}
+#FOOTER a:is(:hover, :focus) {
+    color: var(--primary-brown);
+    text-decoration: underline;
+}
+#FOOTER ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+.footer-contact p,
+.footer-links ul li {
+    margin-bottom: 6px;
+}
+.footer-links ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.footer-links ul li {
+    flex-basis: 50%;
+}
+.footer-social ul li:not(:first-child) {
+    margin-left: 10px;
+}
+#FOOTER .footer-social a {
+    color: var(--primary-purple);
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 400;
+}
+#FOOTER .footer-social a:is(:hover, :focus) {
+    color: var(--primary-red);
+}
+.footer-main-site-link {
+    text-align: right;
+}
+.footer-bottom-row p {
+    margin-bottom: 0;
 }
