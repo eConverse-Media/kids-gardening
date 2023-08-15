@@ -147,7 +147,6 @@ body.ribbit .bootstrap-4 .text-meta {
 }
 .make-buttons em a,
 .btn,
-body.ribbit .btn:not(.btn-ghost):not(.btn-link),
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
 #MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default {
     font-size: 14px;
@@ -603,6 +602,7 @@ body.ribbit #RibbitWelcome .Login {
     text-transform: none;
     font-size: 15px;
     line-height: 18px;
+    border-radius: 40px;
 }
 #CreateBtnWrapper .btn::after {
     border: none;
@@ -877,9 +877,11 @@ body.ribbit #RibbitWelcome .Login {
     z-index: 10;
     position: relative;
 }
-#MPOuterMost .link-cards > .col-md-12 {
+#MPOuterMost #MPOuter .link-cards > .col-md-12 {
     display: flex;
-    margin: -15px -15px -65px -15px;
+    margin-bottom: -65px;
+    padding-left: 0;
+    padding-right: 0;
 }
 #MPOuterMost #MPOuter .link-cards .link-card {
     margin: 0;
@@ -1261,7 +1263,7 @@ body .layout-grid-overflow-hidden .layout-grid-cell {
 }
 
 .bootstrap-4 .layout-grid-cell .p-2 {
-    padding: 12px 40px !important;
+    padding: 12px 20px !important;
 }
 
 .FeedWidget .hl-profile-avatar.lg img {
@@ -1318,6 +1320,26 @@ body.ribbit .tags-list a.label-search-tag {
 .feed-item-row .justify-content-between .btn-ghost + a.link-standalone {
     color: var(--ui-black);
     font-size: 15px !important;
+    padding: 0;
+}
+.feed-item-row .justify-content-between .btn-ghost + a.link-standalone:is(:hover, :focus) {
+    color: var(--primary-brown);
+    text-decoration: underline;
+}
+
+/* like button */
+
+#MPOuterMost .feed-item-row button[qa-id="feed-item-recommend"] {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--ui-black);
+    padding: 0;
+}
+#MPOuterMost .feed-item-row button[qa-id="feed-item-recommend"]:is(:hover, :focus) {
+    background: transparent;
+    color: var(--ui-grey);
 }
 
 /* replies */
@@ -1590,7 +1612,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     background-repeat: no-repeat;
     background-position: top center;
 }
-.funding-opportunities .HLLandingControl ul li .title-row {
+.funding-opportunities .HLLandingControl ul li .text-container {
     width: calc(100% - 60px);
 }
 #MPOuterMost #MPOuter #MainCopy_ContentWrapper .funding-opportunities .HLLandingControl ul li .title-row {
@@ -2029,7 +2051,7 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 /****** resources button ******/
 
 .resources-btn.make-buttons,
-#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] {
+#MPOuterMost #MPOuter .event-wrapper .HLLandingControl div[id*="BottomLink"] {
     position: absolute;
     bottom: 75px;
     left: calc(50% - 585px);
