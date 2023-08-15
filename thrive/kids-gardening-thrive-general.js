@@ -1,4 +1,31 @@
+function handleTopTextLinks() {
+    $('.top-text-links').prependTo('#MPOuterHeader > .col-md-12');
+}
 
+function handleSearch() {
+    $('#searchColumn').prepend('<div class="search-wrap"><button type="button" class="search-btn-top" onclick="toggleSearch();" /></div>');
+    $('.search-wrap').append($('.search-bar-top'));
+    $('.search-bar-top .form-control').attr('placeholder', 'Type search terms');
+    $(document).click(function (e) {
+        var target = e.target,
+            searchWrap = $('.search-wrap');
+
+        if ($(target).is(searchWrap) ||
+            !!($(target).closest(searchWrap).html())) {
+                return;
+            } else {
+                closeSearch();
+            }
+    });
+}
+
+function toggleSearch() {
+    $('.search-wrap').toggleClass('open');
+}
+
+function closeSearch() {
+    $('.search-wrap').removeClass('open');
+}
 
 function handleFundingOpportunities() {
     $('.funding-opportunities ul li, .featured-opportunities ul li').each(function () {
@@ -107,7 +134,7 @@ function handleResources() {
         slidesToShow: 4,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: 'calc(50% - 615px)',
+        centerPadding: 'calc(50% - 600px)',
         prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fa-light fa-arrow-left"></i></button>',
         nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>'
     });
@@ -145,7 +172,7 @@ function handleEvents() {
         slidesToShow: 3,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: 'calc(50% - 615px)',
+        centerPadding: 'calc(50% - 600px)',
         prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fa-light fa-arrow-left"></i></button>',
         nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>'
     });
@@ -161,6 +188,8 @@ function handleFeaturedOpportunities() {
 }
 
 $(function () {
+    handleTopTextLinks();
+    handleSearch();
     handleFundingOpportunities();
     handleResources();
     handleEvents();

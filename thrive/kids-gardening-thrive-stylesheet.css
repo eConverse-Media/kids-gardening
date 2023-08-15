@@ -17,6 +17,7 @@
     --secondary-orange: #F2AF32;
     --primary-red: #BF0D3E;
     --secondary-red: #E70F47;
+    --secondary-dark-blue: #1b365d;
 }
 
 /************ basics ************/
@@ -146,6 +147,7 @@ body.ribbit .bootstrap-4 .text-meta {
 }
 .make-buttons em a,
 .btn,
+body.ribbit .btn:not(.btn-ghost):not(.btn-link),
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
 #MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default {
     font-size: 14px;
@@ -196,6 +198,7 @@ body.ribbit .open .dropdown-toggle.btn-success,
 .make-buttons em a:is(:hover, :focus),
 .btn-primary:is(:hover, :focus),
 body.ribbit .btn-primary:is(:hover, :focus),
+body.ribbit .btn-primary:is(:hover, :focus):not(:disabled),
 body.ribbit .btn-primary.active:is(:hover, :focus),
 body.ribbit .btn.btn-info:is(:hover, :focus),
 body.ribbit .btn-info.active:is(:hover, :focus),
@@ -211,7 +214,9 @@ body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus),
 body.ribbit .btn.btn-success,
 body.ribbit .btn-success.active,
 body.ribbit .open .dropdown-toggle.btn-success,
-#MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink {
+#MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
+#CreateBtnWrapper .btn-primary,
+#RibbitWelcome .Login .btn-primary {
     color: #fff;
     border-color: var(--primary-purple);
     background-color: var(--primary-purple);
@@ -221,7 +226,9 @@ body.ribbit .open .dropdown-toggle.btn-success,
 body.ribbit .btn.btn-success:is(:hover, :focus),
 body.ribbit .btn-success.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus),
-#MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink:is(:hover, :focus) {
+#MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink:is(:hover, :focus),
+#CreateBtnWrapper .btn-primary:is(:hover, :focus),
+#RibbitWelcome .Login .btn-primary:is(:hover, :focus) {
     background-color: transparent;
     color: var(--primary-purple);
     border-color: var(--primary-purple);
@@ -306,6 +313,314 @@ body.ribbit:not(.interior).bodyBackground {
 #MPOuterMost  .row-wide > div[class*="col-md-"][class*="section"] {
     padding-left: 15px;
     padding-right: 15px;
+}
+body.ribbit .row-wide {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/************ header ************/
+
+/****** top text links ******/
+
+.top-text-links {
+    background-color: var(--ui-white-grey);
+    padding: 6px 40px;
+}
+.top-text-links ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: end;
+    padding: 0;
+    margin: 0;
+}
+.top-text-links ul li:not(:first-child) {
+    margin-left: 15px;
+}
+.top-text-links a {
+    color: var(--secondary-dark-blue);
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
+.top-text-links a:is(:hover, :focus) {
+    text-decoration: underline;
+    color: var(--primary-brown);
+}
+
+/****** nav ******/
+
+#MPOuterMost #NAV {
+    box-shadow: none;
+}
+#MPOuterMost #MPOuterHeader #MPButtonBar {
+    max-width: 100%;
+    padding: 10px 40px;
+}
+#NAV .navbar {
+    padding: 0;
+    min-height: 0;
+}
+
+/****** search ******/
+
+#MPSearchBlock {
+    display: none;
+}
+.search-wrap {
+    position: relative;
+}
+
+/*** search button ***/
+
+.search-btn-top {
+    width: 34px;
+    height: 34px;
+    background-color: var(--primary-orange);
+    text-align: center;
+    line-height: 34px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+}
+.search-btn-top::before {
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    content: '\f002';
+}
+.search-wrap.open .search-btn-top::before {
+    content: '\f00d';
+}
+
+/*** search bar ***/
+
+.search-bar-top {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 0;
+    transition: .3s;
+    overflow: hidden;
+    width: 600px;
+    z-index: -1;
+}
+.search-wrap.open .search-bar-top {
+    height: 90px;
+    transition: .3s;
+    z-index: 100;
+}
+.search-bar-top .form-control::placeholder,
+#MPSearchBlock .form-control::placeholder {
+    color: var(--ui-grey);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+.search-wrap .search-bar-top .SearchInputs .form-control,
+#MPSearchBlock .SearchInputs .form-control {
+    border: none;
+    border-bottom: 1px solid var(--ui-light-grey);
+    border-radius: 0;
+    box-shadow: none;
+}
+.search-wrap .search-bar-top .SearchInputs,
+#MPSearchBlock .SearchInputs {
+    background-color: #fff;
+    height: 88px;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 24px 4px 24px 34px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+/****** menu ******/
+
+#NAV .navbar-nav {
+    justify-content: end;
+}
+#NAV .navbar-default .navbar-nav > li > a,
+#NAV .navbar-default .navbar-nav > .active > a,
+#NAV .navbar-default .navbar-nav > .active > a:hover,
+#NAV .navbar-default .navbar-nav > .active > a:focus {
+	font-size: 15px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #2D2926;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#NAV .navbar-default .navbar-nav > .active > a,
+#NAV .navbar-default .navbar-nav > .active > a:hover,
+#NAV .navbar-default .navbar-nav > .active > a:focus {
+	background-color: transparent;
+}
+
+#NAV .navbar-default .navbar-nav > li > a:hover,
+#NAV .navbar-default .navbar-nav > li > a:focus,
+#NAV .navbar-default .navbar-nav > .active > a:hover,
+#NAV .navbar-default .navbar-nav > .active > a:focus,
+#NAV .navbar-default .navbar-nav > .disabled > a:hover,
+#NAV .navbar-default .navbar-nav > .disabled > a:focus,
+#NAV .navbar-default .navbar-nav > .open > a {
+	text-decoration: underline;
+}
+
+#NAV .navbar-default .navbar-nav li.dropdown.open.active > a {
+	border-bottom-color:#052B3E;
+}
+
+/* Nav Bar Carets */
+
+ul.navbar-nav li a .caret {
+	border: 0;
+	vertical-align: baseline;
+	width: auto;
+}
+
+ul.navbar-nav li a .caret::before {
+	font-family: "Font Awesome 5 Pro";
+	content: "\f078";
+	font-size: 12px;
+	line-height: 1;
+	color: #c4c4c4;
+	transition: 0.3s;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background-color: transparent;
+}
+
+ul.navbar-nav li a:hover .caret::before,ul.navbar-nav li a:focus .caret::before, ul.navbar-nav li.open a .caret::before { 
+	color: #FFD200;
+	transition: 0.3s;
+}
+
+/*** dropdowns ***/
+
+#NAV .navbar-nav > li > .dropdown-menu {
+	background-color: #fff;
+	border: none;
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.06), 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 0px 10px rgba(0, 0, 0, 0.03);
+	border-radius: 10px;
+	padding: 4px 0;
+	min-width: 250px;
+	overflow: hidden;
+}
+
+#NAV .navbar-nav > li:last-of-type > .dropdown-menu { 
+	right: 0;
+	left: unset;
+}
+
+#NAV #MPButtonBar .navbar-nav .dropdown-menu > li > a {
+	color: var(--ui-black);
+	padding: 8px 36px 8px 16px;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 500;
+	border-bottom: 1px solid #f5f7f8;
+	position: relative;
+	transition: 0.3s;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#NAV #MPButtonBar .navbar-nav .dropdown-menu > li > a:hover, 
+#NAV #MPButtonBar .navbar-nav .dropdown-menu > li > a:focus { 
+	color: var(--ui-grey);
+	padding-left: 36px;
+    padding-right: 16px;
+	transition: 0.3s;
+    background: transparent;
+}
+
+#NAV .navbar-nav .dropdown-menu > li > a:is(:hover, :focus)::before { 
+	content: '\f061';
+	font-family: 'Font Awesome 5 Pro';
+	font-size: 15px;
+	font-weight: 400;
+	color: var(--secondary-green);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 16px;
+}
+
+#NAV .nav.navbar-nav .dropdown-submenu > ul.dropdown-submenu {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#NAV .navbar-nav .dropdown-submenu > li > a {
+	padding: 23px 34px;
+	color: #fff;
+	background-color: var(--primary-blue);
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+	display: block;
+}
+
+#NAV .navbar-nav .dropdown-submenu > li > a:hover, 
+#NAV .navbar-nav .dropdown-submenu > li > a:focus { 
+	color: var(--ui-grey);
+	background-color: #fff;
+}
+
+#NAV .navbar-nav .dropdown-menu > .active > a,
+#NAV .navbar-nav .dropdown-menu > .active > a:hover,
+#NAV .navbar-nav .dropdown-menu > .active > a:focus,
+#NAV .navbar-nav .dropdown-menu > li > a:hover,
+#NAV .navbar-nav .dropdown-menu > li > a:focus,
+#NAV .navbar-nav .dropdown-menu > .dropdown-submenu > a {
+	color: var(--ui-grey);
+	background-color: #fff;
+}
+
+#NAV .navbar-nav .dropdown-menu > .dropdown-submenu > a .caret {
+	display: block;
+	float: right;
+}
+
+/****** profile dropdown ******/
+
+body.ribbit .ProfileDropDown .img-button, 
+body.ribbit .ProfileDropDown .img-button img {
+    height: 34px;
+    width: 34px;
+}
+
+/****** create & login buttons ******/
+
+body.ribbit #CreateBtnWrapper,
+body.ribbit #RibbitWelcome .Login {
+    margin-left: 10px;
+}
+#CreateBtnWrapper .btn-primary,
+#RibbitWelcome .Login .btn-primary {
+    padding: 7px 11px;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 18px;
+}
+#CreateBtnWrapper .btn::after {
+    border: none;
+    font-family: 'Font Awesome 6 Pro';
+    content: '\f078';
+    color: #fff;
+    vertical-align: unset;
+    font-size: 10px;
+}
+#RibbitWelcome .Login .btn-primary::before {
+    font-family: 'Font Awesome 6 Pro';
+    content: '\f090';
+    color: #fff;
+    margin-right: 4px;
+}
+#CreateBtnWrapper .btn:is(:hover, :focus)::after,
+#RibbitWelcome .Login .btn-primary:is(:hover, :focus)::before {
+    color: var(--primary-purple);
 }
 
 /************ homepage ************/
@@ -459,6 +774,9 @@ body.ribbit:not(.interior).bodyBackground {
     height: auto;
     width: 100%;
 }
+#MPOuterMost #MPOuter #MainCopy_ContentWrapper .hero-slide {
+    max-width: 100%;
+}
 #MPOuterMost #MPOuter .hero-slider.slick-dotted {
     margin-bottom: 45px;
 }
@@ -477,6 +795,14 @@ body.ribbit:not(.interior).bodyBackground {
     flex-shrink: 1;
     display: flex;
     flex-direction: column;
+}
+.home .hero-slide .img-container {
+    width: 660px;
+    margin-right: 40px;
+}
+.home .hero-slide .HtmlContent {
+    width: calc(100% - 700px);
+    padding-left: calc(50% - 585px);
 }
 .hero-slide .HtmlContent p:has(em) {
     margin-top: auto;
@@ -537,6 +863,12 @@ body.ribbit:not(.interior).bodyBackground {
 }
 .hero-slider .slick-arrow.prev-arrow {
     right: calc(42% + 90px);
+}
+.home .hero-slider .slick-arrow.next-arrow {
+    right: 740px;
+}
+.home .hero-slider .slick-arrow.prev-arrow {
+    right: 790px;
 }
 
 /************ link cards ************/
@@ -1362,8 +1694,8 @@ body.ribbit .resource-title h2 {
     color: #fff;
 }
 body.ribbit #MPOuterMost #MPOuter .event-wrapper .row.heading,
-#MPOuterMost .resource-title {
-    max-width: 1200px;
+#MPOuterMost #MPOuter .resource-title {
+    max-width: 1170px;
     margin: 0 auto;
     padding: 0;
     border: none;
@@ -1405,7 +1737,7 @@ body.ribbit .event-wrapper h2::before,
     left: 0;
     top: 0;
     bottom: 30px;
-    width: calc(50% - 615px);
+    width: calc(50% - 600px);
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/Dirt.png');
     background-size: auto;
     background-color: var(--primary-brown);
@@ -1687,11 +2019,11 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 }
 .featured-resources .slick-arrow.next-arrow,
 .event-wrapper .slick-arrow.next-arrow {
-    right: calc(50% - 600px);
+    right: calc(50% - 585px);
 }
 .featured-resources .slick-arrow.prev-arrow,
 .event-wrapper .slick-arrow.prev-arrow {
-    right: calc(50% - 550px);
+    right: calc(50% - 535px);
 }
 
 /****** resources button ******/
@@ -1700,7 +2032,7 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
 #MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] {
     position: absolute;
     bottom: 75px;
-    left: calc(50% - 600px);
+    left: calc(50% - 585px);
 }
 .resources-btn.make-buttons em a:is(:hover, :focus) {
     color: var(--primary-brown);
@@ -1771,8 +2103,9 @@ body.ribbit .featured-opportunities h5 {
 
 /************ bottom carousel ************/
 
-#MPOuterMost #MPOuter .bottom-carousel {
-    margin-top: 80px;
+#MPOuterMost #MPOuter #MainCopy_ContentWrapper .bottom-carousel {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 #MPOuterMost .bottom-carousel > .col-md-12.slick-slider {
     box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
@@ -1881,7 +2214,7 @@ body.ribbit .featured-opportunities h5 {
 /************ partners ************/
 
 #MPOuterMost #MPOuter .partners-title {
-    margin-top: 80px;
+    margin-top: 30px;
 }
 .partners-title h2 {
     margin-bottom: 40px;
@@ -1944,10 +2277,10 @@ body.ribbit .featured-opportunities h5 {
 }
 
 .partners .slick-arrow.next-arrow {
-    right: calc(50% - 600px);
+    right: calc(50% - 585px);
 }
 .partners .slick-arrow.prev-arrow {
-    right: calc(50% - 550px);
+    right: calc(50% - 535px);
 }
 .partners .slick-arrow:is(:hover, :focus) {
     color: #fff;
@@ -1966,11 +2299,12 @@ body.ribbit.memberhome #FOOTER {
     color: var(--ui-black);
 }
 #MPOuterFooter::after,
-#MPCopyright {
+#MPCopyright,
+#MPFooterLink {
     display: none;
 }
 #MPOuterMost #MPOuterFooter .footer-top-row {
-    padding: 50px 0;
+    padding: 50px 15px;
 }
 #MPOuterMost #MPOuterFooter #FOOTER .footer-bottom-row {
     padding: 10px 0;
@@ -1978,7 +2312,7 @@ body.ribbit.memberhome #FOOTER {
     max-width: 100%;
 }
 #MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide {
-    padding: 0;
+    padding: 0 15px;
 }
 #MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3,
 #MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide > .col-md-6 {

@@ -32,7 +32,7 @@ function handlePartnerCarousel() {
         slidesToShow: 5,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: 'calc(50% - 615px)',
+        centerPadding: 'calc(50% - 600px)',
         prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fa-light fa-arrow-left"></i></button>',
         nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>'
     })
