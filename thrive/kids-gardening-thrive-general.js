@@ -141,21 +141,27 @@ function handleResources() {
         nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>',
         responsive: [
             {
-                breakpoint: '1201px',
+                breakpoint: 1201,
                 settings: {
                     centerMode: false       
                 }
             },
             {
-                breakpoint: '992px',
+                breakpoint: 992,
                 settings: {
                     slidesToShow: 3
                 }
             },
             {
-                breakpoint: '769px',
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1
                 }
             }
         ]
@@ -199,15 +205,22 @@ function handleEvents() {
         nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>',
         responsive: [
             {
-                breakpoint: '1201px',
+                breakpoint: 1201,
                 settings: {
-                    centerMode: false       
+                    centerMode: false
                 }
             },
             {
-                breakpoint: '769px',
+                breakpoint: 769,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1
                 }
             }
         ]
