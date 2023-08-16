@@ -2536,6 +2536,81 @@ body.ribbit .featured-opportunities h5 {
     background-color: var(--ui-black);
 }
 
+/************ interior pages ************/
+
+/****** rounded images ******/
+
+body.ribbit #MessageListContainer .col-sm-2 .form-group a img,
+body.ribbit .profile-img-lg,
+.bioBubbleShell .Pict img,
+.row.library-list .form-group img,
+.form-group [id$='_imgDisplay'],
+.table-directory td img,
+.comments-block .CommentUserProfile .form-group img,
+.ContentUserControl .related-links-block .CommentUserProfile img {
+    border-radius: 50%;
+}
+
+/****** dropdowns & nav pills ******/
+
+.dropdown-menu>li>a {
+    color: var(--ui-black);
+}
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:hover, 
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: var(--ui-white-grey);
+    color: var(--ui-black);
+}
+body.ribbit.profile ul[id$=_ProfileTabList]>li.active {
+    border-bottom-color: var(--primary-purple);
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background-color: var(--primary-purple);
+}
+a.list-group-item.active>.badge, .nav-pills>.active>a>.badge {
+    color: var(--primary-purple);
+}
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li.active-tab,
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:hover,
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li:focus,
+body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li.active-tab {
+    color: var(--primary-purple);
+    border-bottom-color: var(--primary-purple);
+}
+
+/****** search ******/
+
+.inbox-list .custom-search-form .btn.btn-success,
+.faceted-search-main .faceted-search-toggle .btnSearch.btn-default {
+    padding: 8px 12px;
+}
+.faceted-search-main .faceted-search-toggle .btnSearch.btn-default {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/****** fixing bootstrap switch buttons ******/
+
+.modal-wide .modal-body.add-edit-event .bootstrap-switch-handle-on, 
+.modal-wide .modal-body.add-edit-event .bootstrap-switch-handle-off {
+    white-space: nowrap;
+    word-wrap: unset;
+}
+
+/****** pagination ******/
+
+.pagination>.active>a, 
+.pagination>.active>span, 
+.pagination>.active>a:hover, 
+.pagination>.active>span:hover, 
+.pagination>.active>a:focus, 
+.pagination>.active>span:focus {
+    background-color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+
 /************ footer ************/
 
 body.ribbit.memberhome #MPOuterFooter,
