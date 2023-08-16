@@ -22,6 +22,12 @@
 
 /************ basics ************/
 
+/****** removing HtmlFooter ******/
+
+.HtmlFooter {
+    display: none;
+}
+
 /****** addressing wrapping of inline elements in <p> tags ******/
 
 p:has(>em>a),
@@ -305,7 +311,7 @@ body.ribbit:not(.interior).bodyBackground {
     height: 32px;
 }
 .bg-white::before {
-    top: -32px;
+    top: -31px;
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/bg-white-top.svg');
 }
 .bodyBackground:not(.interior) .bg-white::after {
@@ -326,6 +332,14 @@ body.ribbit:not(.interior).bodyBackground {
 body.ribbit .row-wide {
     padding-left: 0;
     padding-right: 0;
+}
+
+/****** margins ******/
+
+@media (max-width: 992px) {
+    #MPOuterMost #MPOuter .margin-top-30-mob {
+        margin-top: 30px;
+    }
 }
 
 /************ header ************/
@@ -356,6 +370,12 @@ body.ribbit .row-wide {
 .top-text-links a:is(:hover, :focus) {
     text-decoration: underline;
     color: var(--primary-brown);
+}
+
+/****** logo ******/
+
+body.ribbit #LogoNavPlaceholder {
+    margin: 0;
 }
 
 /****** nav ******/
@@ -868,6 +888,9 @@ body.ribbit #RibbitWelcome .Login {
 .hero-slide .HtmlContent p:last-child {
     margin-bottom: 0;
 }
+.hero-slide .HtmlContent p:last-child {
+    width: calc(100% - 150px);
+}
 .hero-slide .HtmlContent h2 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -936,6 +959,8 @@ body.ribbit #RibbitWelcome .Login {
     margin-bottom: -65px;
     padding-left: 0;
     padding-right: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #MPOuterMost #MPOuter .link-cards .link-card {
     margin: 0;
@@ -1041,6 +1066,7 @@ body.ribbit .search-row {
 body.ribbit .row.search-row>.col-md-8 {
     max-width: 700px;
     margin-left: auto;
+    width: 58%;
 }
 
 .search-row>.col-md-4 h4 {
@@ -1116,6 +1142,7 @@ body.ribbit .ContentUserControl.tile .HLLandingControl .row.heading h2 {
 body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .row.heading {
     padding: 0;
     border: none;
+    display: block;
 }
 body.ribbit #MPOuterMost .ContentUserControl.tile .HLLandingControl {
     filter: none;
@@ -1274,7 +1301,7 @@ body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .Co
 /************ activity feed ************/
 
 .FeedWidget {
-    padding-right: 24px;
+    padding-right: 10px;
 }
 
 body .feed-list .feed-title-filter {
@@ -1520,6 +1547,11 @@ body.ribbit .community-list .btn-community-stats-static:is(:hover, :focus),
     margin: 5px;
     margin-bottom: 0;
 }
+.label-search-tag:is(:hover, :focus),
+.content-tags a.label-search-tag:is(:hover, :focus) {
+    background-color: #dbe0e1;
+    text-decoration: none;
+}
 
 /************ popular groups ************/
 
@@ -1541,6 +1573,7 @@ body.ribbit .community-list .btn-community-stats-static:is(:hover, :focus),
     flex-direction: row-reverse;
     justify-content: flex-end;
     margin: -5px;
+    flex-wrap: wrap;
 }
 body.ribbit .community-list .btn-community-stats-static .badge {
     background: transparent;
@@ -1722,7 +1755,7 @@ body.ribbit .community-list .btn-community-stats-static .badge {
     position: absolute;
     left: 0;
     right: 0;
-    top: -32px;
+    top: -31px;
     height: 32px;
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/bg-brown-top.svg');
     background-size: auto auto;
@@ -1772,6 +1805,7 @@ body.ribbit .resource-title h2 {
 body.ribbit #MPOuterMost #MPOuter .event-wrapper .row.heading,
 #MPOuterMost #MPOuter .resource-title {
     max-width: 1170px;
+    width: calc(100% - 30px);
     margin: 0 auto;
     padding: 0;
     border: none;
@@ -1914,6 +1948,7 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-left: -5px;
 }
 .featured-resources .library-list .ItemRatingCommentPanel .btn-sm {
@@ -2303,13 +2338,15 @@ body.ribbit .featured-opportunities h5 {
     padding-left: 15px;
     padding-right: 15px;
 }
-#MPOuterMost .bottom-carousel > .col-md-12.slick-slider {
+#MPOuterMost #MPOuter .bottom-carousel > .col-md-12.slick-slider {
     box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
     background-color: var(--primary-brown);
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/Dirt.png');
     background-size: auto;
     margin: 0;
     border-radius: 10px;
+    padding-left: 0;
+    padding-right: 0;
 }
 #MPOuterMost .bottom-carousel .slick-track {
     display: flex;
@@ -2393,10 +2430,10 @@ body.ribbit .featured-opportunities h5 {
 
 .ad-space img {
     border-radius: 10px;
-}
-.col-md-12 > .ad-space img {
     margin-left: auto;
     margin-right: auto;
+}
+.col-md-12 > .ad-space img {
     margin-top: 80px;
 }
 .col-md-12 > .ad-space {
@@ -2499,8 +2536,13 @@ body.ribbit.memberhome #FOOTER {
 #MPFooterLink {
     display: none;
 }
+#FOOTER {
+    padding: 0;
+}
 #MPOuterMost #MPOuterFooter .footer-top-row {
     padding: 50px 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 #MPOuterMost #MPOuterFooter #FOOTER .footer-bottom-row {
     padding: 10px 0;
@@ -2509,6 +2551,8 @@ body.ribbit.memberhome #FOOTER {
 }
 #MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide {
     padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 #MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3,
 #MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide > .col-md-6 {
@@ -2529,6 +2573,9 @@ body.ribbit.memberhome #FOOTER {
 }
 .footer-top-row > .col-md-3:last-child {
     width: 8.5%;
+}
+#MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide .col-md-6 {
+    width: 50%;
 }
 #FOOTER h2 {
     margin-top: 0;
@@ -2553,14 +2600,11 @@ body.ribbit.memberhome #FOOTER {
     list-style-type: none;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 .footer-contact p,
 .footer-links ul li {
     margin-bottom: 6px;
-}
-.footer-links ul {
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 .footer-links ul li {
     flex-basis: 50%;
@@ -2582,4 +2626,250 @@ body.ribbit.memberhome #FOOTER {
 }
 .footer-bottom-row p {
     margin-bottom: 0;
+}
+
+/************ responsive ************/
+
+@media (max-width: 1280px) {
+    .home .hero-slide .HtmlContent {
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 1230px) {
+    .featured-resources .slick-arrow.next-arrow,
+    .event-wrapper .slick-arrow.next-arrow,
+    .partners .slick-arrow.next-arrow {
+        right: 15px;
+    }
+    .featured-resources .slick-arrow.prev-arrow,
+    .event-wrapper .slick-arrow.prev-arrow,
+    .partners .slick-arrow.prev-arrow {
+        right: 65px;
+    }
+    .resources-btn.make-buttons,
+    #MPOuterMost #MPOuter .event-wrapper .HLLandingControl div[id*="BottomLink"] {
+        left: 15px;
+    }
+}
+
+@media (max-width: 1215px) {
+    #MPOuterMost #MPOuter #MainCopy_ContentWrapper .bottom-carousel {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body.ribbit #NAV>div {
+        padding: 0;
+    }
+    .featured-resources .slick-slider::before,
+    .event-wrapper .slick-slider::before,
+    .featured-resources .slick-slider::after,
+    .event-wrapper .slick-slider::after {
+        display: none;
+    }
+    .home .hero-slide .img-container {
+        width: calc(50% - 40px);
+    }
+    .home .hero-slide .HtmlContent {
+        width: 50%;
+    }
+    .home .hero-slider .slick-arrow.next-arrow {
+        right: calc(50% + 40px);
+    }
+    
+    .home .hero-slider .slick-arrow.prev-arrow {
+        right: calc(50% + 90px);
+    }
+}
+
+@media (max-width: 992px) {
+    #MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3:first-child,
+    #MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3:nth-child(2),
+    #MPOuterMost #MPOuterFooter .footer-top-row > .col-md-3:nth-child(3) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .footer-top-row > .col-md-3:last-child {
+        width: 100%;
+    }
+    .footer-logo {
+        width: 300px;
+        max-width: 100%;
+    }
+    .FeedWidget {
+        padding-right: 0;
+    }
+    .link-card {
+        flex-basis: 33.3333333%;
+    }
+}
+
+@media (max-width: 991px) {
+    #MPOuterMost #MPOuterFooter .footer-bottom-row .row-wide .col-md-6 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .navbar-header {
+        float: none;
+    }
+​
+    .navbar-toggle {
+        display: block;
+    }
+​
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+​
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+​
+    .navbar-nav {
+        float: none !important;
+        margin: 7.5px -15px;
+    }
+​
+    .navbar-nav>li {
+        float: none;
+    }
+​
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+​
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+​
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+​
+    .collapsing {
+        overflow: hidden !important;
+    }
+​
+    .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+​
+    .navbar-nav .open .dropdown-menu>li>a {
+        line-height: 20px;
+    }
+​
+    .navbar-nav .open .dropdown-menu>li>a,
+    .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 5px 15px 5px 25px;
+    }
+​
+    body.ribbit #NAV #MPButtonBar nav.navbar.navbar-default,
+    body.ribbit .navbar,
+    body.ribbit .navbar-default .navbar-nav {
+        display: inline-block;
+    }
+​
+   body.ribbit #MPButtonBar .navbar-nav>li>.dropdown-menu {
+        transform: none;
+        margin-left: 10px;
+        box-shadow: none
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slider.slick-dotted .hero-slide.slick-slide {
+        flex-direction: column-reverse;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .home .hero-slide .img-container {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 40px;
+        height: 300px;
+    }
+    .home .hero-slide .HtmlContent {
+        width: 100%;
+        padding: 0;
+        height: calc(100% - 340px);
+    }
+    .home .hero-slider .slick-arrow.next-arrow,
+    .home .hero-slider .slick-arrow.prev-arrow {
+        bottom: 340px;
+    }
+    .home .hero-slider .slick-arrow.next-arrow {
+        right: 15px;
+    }
+    .home .hero-slider .slick-arrow.prev-arrow {
+        right: 65px;
+    }
+    body.ribbit .search-row {
+        display: block;
+    }
+    body.ribbit .row.search-row > .col-md-4,
+    body.ribbit .row.search-row > .col-md-8 {
+        width: 100%;
+        max-width: unset;
+    }
+    #MPOuterMost #MPOuter .featured-opportunities {
+        flex-wrap: wrap;
+    }
+    #MPOuterMost #MPOuter .featured-opportunities > .col-md-6 {
+        flex-basis: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    #MPOuterMost #MPOuter .featured-opportunities > .col-md-6:first-child {
+        margin-bottom: 30px;
+    }
+    #MPOuterMost .bottom-carousel .bottom-slide {
+        display: block;
+        padding: 15px 20px;
+    }
+    .bottom-carousel .bottom-slide.gardening-tip .HtmlContent {
+        width: 100%;
+    }
+    .bottom-carousel .bottom-slide.gardening-tip .img-container {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .link-card {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    a.btn-community-stats-static span.badge {
+        display: inline;
+        width: auto;
+        margin: 0;
+        border: none;
+    }
+    .rowContainer.community-list {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 370px) {
+    .link-card {
+        flex-basis: 100%;
+    }
 }

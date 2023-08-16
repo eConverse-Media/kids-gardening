@@ -73,7 +73,23 @@ function handleHeroSlider() {
         fade: true,
         infinite: true,
         prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="fa-light fa-arrow-left"></i></button>',
-        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>'
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="fa-light fa-arrow-right"></i></button>',
+        responsive: [
+            {
+                breakpoint: '1201px',
+                settings: {
+                    centerMode: false       
+                }
+            },
+            ,
+            {
+                breakpoint: '769px',
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+    
+        ]
     });
 
 }
