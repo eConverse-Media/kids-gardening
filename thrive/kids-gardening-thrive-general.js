@@ -21,10 +21,12 @@ function handleSearch() {
 
 function toggleSearch() {
     $('.search-wrap').toggleClass('open');
+    $('#MainCopy_ContentWrapper').toggleClass('search-open');
 }
 
 function closeSearch() {
     $('.search-wrap').removeClass('open');
+    $('#MainCopy_ContentWrapper').removeClass('search-open');
 }
 
 function handleFundingOpportunities() {

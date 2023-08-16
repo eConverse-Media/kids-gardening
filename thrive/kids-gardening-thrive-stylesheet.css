@@ -411,7 +411,7 @@ body.ribbit .row-wide {
 
 .search-bar-top {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 35px);
     right: 0;
     height: 0;
     transition: .3s;
@@ -424,27 +424,68 @@ body.ribbit .row-wide {
     transition: .3s;
     z-index: 100;
 }
-.search-bar-top .form-control::placeholder,
-#MPSearchBlock .form-control::placeholder {
+.search-bar-top .form-control::placeholder {
     color: var(--ui-grey);
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
 }
-.search-wrap .search-bar-top .SearchInputs .form-control,
-#MPSearchBlock .SearchInputs .form-control {
+.search-wrap .search-bar-top .SearchInputs .form-control {
     border: none;
     border-bottom: 1px solid var(--ui-light-grey);
     border-radius: 0;
     box-shadow: none;
+    width: calc(100% - 146px);
+    margin: 24px 24px 24px 34px;
+    height: 40px;
 }
-.search-wrap .search-bar-top .SearchInputs,
-#MPSearchBlock .SearchInputs {
+.search-wrap .search-bar-top .SearchInputs {
     background-color: #fff;
     height: 88px;
     font-size: 24px;
     line-height: 29px;
-    padding: 24px 4px 24px 34px;
     border-radius: 0px 0px 5px 5px;
+    padding: 0;
+    overflow: hidden;
+}
+.search-wrap .search-bar-top .SearchInputs .input-group {
+    display: flex;
+}
+.search-wrap .search-bar-top button[id*="SearchButton"] {
+    color: #fff;
+    background-color: var(--primary-orange);
+    border-radius: 0;
+    width: 88px;
+    height: 88px;
+    margin-left: 0;
+    padding: 0;
+}
+.search-wrap .search-bar-top button[id*="SearchButton"]:is(:hover, :focus) {
+    color: #fff;
+    background-color: var(--secondary-green);
+}
+.search-wrap .SearchInputs .form-control+.input-group-btn {
+    width: 88px;
+    height: 88px;
+    position: relative;
+}
+
+#MainCopy_ContentWrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: hsla(26, 8%, 16%, 0.5);
+    opacity: 0;
+    z-index: -1;
+    transition: .3s;
+}
+#MainCopy_ContentWrapper.search-open::before {
+    z-index: 50;
+    opacity: 1;
 }
 
 /****** menu ******/
