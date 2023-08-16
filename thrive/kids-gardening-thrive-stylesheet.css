@@ -104,6 +104,16 @@ body.ribbit .overline .HtmlContent>p:first-child>strong {
     font-weight: 600;
 }
 
+a {
+    color: var(--ui-black);
+    font-weight: 500;
+    text-decoration: underline;
+}
+a:is(:hover, :focus) {
+    color: var(--secondary-brown);
+    text-decoration: underline;
+}
+
 a,
 a:is(:hover, :focus),
 button,
@@ -392,6 +402,9 @@ body.ribbit .row-wide {
 }
 .search-wrap.open .search-btn-top::before {
     content: '\f00d';
+}
+.search-btn-top:is(:hover, :focus) {
+    background-color: var(--primary-red);
 }
 
 /*** search bar ***/
@@ -2060,7 +2073,7 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
     color: var(--primary-brown);
 }
 
-/****** resource type icon ******/
+/****** resource type icons ******/
 
 .featured-resources .library-list > .col-md-12::before {
     width: 60px;
@@ -2073,13 +2086,133 @@ body.ribbit #MPOuterMost #MPOuter .event-wrapper .HLLandingControl {
     font-weight: 400;
     font-family: 'Font Awesome 6 Pro';
 }
-.featured-resources .library-list > .col-md-12.guides::before {
-    background: var(--primary-blue);
+.featured-resources .library-list .label-search-tag::after {
+    font-family: 'Font Awesome 6 Pro';
+    font-size: 13px;
+    line-height: 14px;
+    margin-right: 4px;
+    font-weight: 900;
+    float: left;
+}
+.featured-resources .library-list > .col-md-12.guides::before,
+.featured-resources .library-list > .guides .label-search-tag::after {
     content: '\f022';
+}
+.featured-resources .library-list > .col-md-12.guides::before {
+    background: var(--primary-red);
+}
+.featured-resources .library-list > .guides .label-search-tag::after {
+    color: var(--primary-red);
+}
+.featured-resources .library-list > .col-md-12.curriculum::before,
+.featured-resources .library-list > .curriculum .label-search-tag::after {
+    content: '\f02d';
 }
 .featured-resources .library-list > .col-md-12.curriculum::before {
     background: var(--primary-orange);
-    content: '\f02d';
+}
+.featured-resources .library-list > .curriculum .label-search-tag::after {
+    color: var(--primary-orange);
+}
+.featured-resources .library-list > .col-md-12.lesson-plans::before,
+.featured-resources .library-list > .lesson-plans .label-search-tag::after {
+    content: '\f5db';
+}
+.featured-resources .library-list > .col-md-12.lesson-plans::before {
+    background: var(--primary-green);
+}
+.featured-resources .library-list > .lesson-plans .label-search-tag::after {
+    color: var(--primary-green);
+}
+.featured-resources .library-list > .col-md-12.webinars::before,
+.featured-resources .library-list > .webinars .label-search-tag::after {
+    content: '\f144';
+}
+.featured-resources .library-list > .col-md-12.webinars::before {
+    background: var(--primary-blue);
+}
+.featured-resources .library-list > .webinars .label-search-tag::after {
+    color: var(--primary-blue);
+}
+.featured-resources .library-list > .col-md-12.activities::before,
+.featured-resources .library-list > .activities .label-search-tag::after {
+    content: '\f004';
+}
+.featured-resources .library-list > .col-md-12.activities::before {
+    background: var(--primary-purple);
+}
+.featured-resources .library-list > .activities .label-search-tag::after {
+    color: var(--primary-purple);
+}
+.featured-resources .library-list > .col-md-12.videos::before,
+.featured-resources .library-list > .videos .label-search-tag::after {
+    content: '\f03d';
+}
+.featured-resources .library-list > .col-md-12.videos::before {
+    background: var(--primary-brown);
+}
+.featured-resources .library-list > .videos .label-search-tag::after {
+    color: var(--primary-brown);
+}
+.featured-resources .library-list > .col-md-12.one-pager::before,
+.featured-resources .library-list > .one-pager .label-search-tag::after {
+    content: '\f15b';
+}
+.featured-resources .library-list > .col-md-12.one-pager::before {
+    background: var(--secondary-red);
+}
+.featured-resources .library-list > .one-pager .label-search-tag::after {
+    color: var(--secondary-red);
+}
+.featured-resources .library-list > .col-md-12.recipes::before,
+.featured-resources .library-list > .recipes .label-search-tag::after {
+    content: '\f86b';
+}
+.featured-resources .library-list > .col-md-12.recipes::before {
+    background: var(--secondary-orange);
+}
+.featured-resources .library-list > .recipes .label-search-tag::after {
+    color: var(--secondary-orange);
+}
+.featured-resources .library-list > .col-md-12.community-chat::before,
+.featured-resources .library-list > .community-chat .label-search-tag::after {
+    content: '\f086';
+}
+.featured-resources .library-list > .col-md-12.community-chat::before {
+    background: var(--secondary-green);
+}
+.featured-resources .library-list > .community-chat .label-search-tag::after {
+    color: var(--secondary-green);
+}
+.featured-resources .library-list > .col-md-12.digital-interactive::before,
+.featured-resources .library-list > .digital-interactive .label-search-tag::after {
+    content: '\f109';
+}
+.featured-resources .library-list > .col-md-12.digital-interactive::before {
+    background: var(--secondary-blue);
+}
+.featured-resources .library-list > .digital-interactive .label-search-tag::after {
+    color: var(--secondary-blue);
+}
+.featured-resources .library-list > .col-md-12.featured-resource::before,
+.featured-resources .library-list > .featured-resource .label-search-tag::after {
+    content: '\f005';
+}
+.featured-resources .library-list > .col-md-12.featured-resource::before {
+    background: var(--secondary-purple);
+}
+.featured-resources .library-list > .featured-resource .label-search-tag::after {
+    color: var(--secondary-purple);
+}
+.featured-resources .library-list > .col-md-12.resource-collection::before,
+.featured-resources .library-list > .resource-collection .label-search-tag::after {
+    content: '\f07b';
+}
+.featured-resources .library-list > .col-md-12.resource-collection::before {
+    background: var(--secondary-brown);
+}
+.featured-resources .library-list > .resource-collection .label-search-tag::after {
+    color: var(--secondary-brown);
 }
 
 /************ featured funding opportunities ************/
