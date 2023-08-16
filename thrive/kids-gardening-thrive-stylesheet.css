@@ -1238,7 +1238,7 @@ body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .Co
 
 body .feed-list .feed-title-filter {
     border-radius: 8px;
-    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.04);
     margin-bottom: 20px;
 }
 
@@ -1257,7 +1257,7 @@ body .feed-list .layout-grid-cell .feed-item-row {
 }
 
 body .feed-item-row.card {
-    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.04);
 }
 
 body .layout-grid-overflow-hidden .layout-grid-cell {
