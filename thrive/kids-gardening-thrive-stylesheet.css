@@ -112,14 +112,25 @@ body.ribbit .overline .HtmlContent>p:first-child>strong {
     font-weight: 600;
 }
 
-a {
+a,
+body.ribbit .bootstrap-4 .btn-link {
     color: var(--ui-black);
     font-weight: 500;
     text-decoration: underline;
 }
-a:is(:hover, :focus) {
+a:is(:hover, :focus),
+body.ribbit .bootstrap-4 a:focus,
+body.ribbit .bootstrap-4 a.focus,
+body.ribbit .bootstrap-4 a:hover:not(:disabled),
+body.ribbit .bootstrap-4 a.hover,
+body.ribbit .bootstrap-4 .btn-link:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn-link:is(:hover, :focus):not(:disabled) {
     color: var(--secondary-brown);
     text-decoration: underline;
+}
+body.ribbit .bootstrap-4 .btn-link:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn-link:is(:hover, :focus):not(:disabled) {
+    background: transparent;
 }
 
 a,
@@ -136,7 +147,11 @@ input:is(:hover, :focus) {
 body.ribbit .bootstrap-4 a.link-title,
 body.ribbit .bootstrap-4 a.link-title:is(:hover, :focus),
 body.ribbit .bootstrap-4 a.link-meta,
-body.ribbit .bootstrap-4 .text-meta {
+body.ribbit .bootstrap-4 .text-meta,
+body.ribbit .bootstrap-4 .btn-contains-title:hover h3,
+body.ribbit .bootstrap-4 .btn-contains-title:hover .h3,
+body.ribbit .bootstrap-4 .btn-contains-title:focus h3,
+body.ribbit .bootstrap-4 .btn-contains-title:focus .h3 {
     color: var(--ui-black);
 }
 body.ribbit .bootstrap-4 * {
@@ -144,6 +159,19 @@ body.ribbit .bootstrap-4 * {
 }
 body.ribbit .bootstrap-4 .text-meta {
     font-weight: 400;
+}
+
+/*** re-setting Thrive colours ***/
+
+body.ribbit .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+* {
+    background-color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+body.ribbit .bootstrap-4 .bg-selected {
+    background-color: var(--ui-white-grey) !important;
+}
+body.ribbit .bootstrap-4 .page-link {
+    color: var(--ui-black);
 }
 
 /****** buttons ******/
