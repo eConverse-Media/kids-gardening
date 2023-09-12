@@ -235,7 +235,8 @@ body.ribbit .btn-info.active,
 body.ribbit .open .dropdown-toggle.btn-primary,
 body.ribbit .btn.btn-default[id*=btnDownload],
 body.ribbit .open .dropdown-toggle.btn-success,
-#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default {
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default,
+body.ribbit.profile #MainCopy_ContentWrapper .btn-default {
     color: var(--ui-black);
     border-color: var(--ui-black);
     background: transparent;
@@ -250,7 +251,8 @@ body.ribbit .btn.btn-info:is(:hover, :focus),
 body.ribbit .btn-info.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus),
 body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus),
-#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default:is(:hover, :focus) {
+#MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default:is(:hover, :focus),
+body.ribbit.profile #MainCopy_ContentWrapper .btn-default:is(:hover, :focus) {
     color: #fff;
     background-color: var(--ui-black);
     border-color: var(--ui-black);
@@ -1187,6 +1189,17 @@ body.ribbit .ContentUserControl.tile .HLLandingControl .row.heading h2 {
     margin-top: 0;
     margin-bottom: 0;
 }
+.FeedWidget .feed-title h2 {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .row.heading {
     padding: 0;
     border: none;
@@ -1264,6 +1277,7 @@ body.ribbit #MPOuterMost #MPOuter .ContentUserControl.tile .HLLandingControl .Co
     font-family: chaloops;
     font-weight: 600;
     text-transform: uppercase;
+    z-index: 10;
 }
 
 .content-tile.featured-member img {
@@ -1733,9 +1747,13 @@ body.ribbit .community-list .btn-community-stats-static .badge {
 
 /************ funding opportunities ************/
 
-.funding-opportunities .HLLandingControl ul li {
+.memberhome .funding-opportunities .HLLandingControl ul li {
     display: flex;
     flex-direction: row;
+}
+#MPOuterMost #MPOuter .funding-opportunities .HLLandingControl ul li {
+    padding-left: 0;
+    padding-right: 0;
 }
 .funding-opportunities .HLLandingControl ul li .img-container {
     width: 50px;
@@ -2648,6 +2666,26 @@ body.ribbit .community-tabs-container #CommunityTabsContainer.nav.nav-tabs li.ac
     border-color: var(--primary-purple);
 }
 
+/****** blogs page ******/
+
+body.ribbit.blogviewer .blogs-block>div>.row:not(.blog-featured-image-row) {
+    max-width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/****** profile page ******/
+
+#MPOuterMost #MPOuter .btn.btn-default[id*="ContactCommunications"] {
+    border-radius: 30px;
+}
+#MPOuterMost #MPOuter .btn.btn-default[id*="ContactRequest"] {
+    margin-bottom: 10px;
+}
+body.ribbit.profile #MainCopy_ContentWrapper>.row:first-child>.col-md-3 {
+    background-color: var(--ui-white-grey);
+}
+
 /************ footer ************/
 
 body.ribbit.memberhome #MPOuterFooter,
@@ -2784,6 +2822,15 @@ body.ribbit.memberhome #FOOTER {
     #MPOuterMost #MPOuter #MainCopy_ContentWrapper .bottom-carousel {
         padding-left: 20px;
         padding-right: 20px;
+    }
+    body.ribbit.blogviewer .blogs-block>div>.row:not(.blog-featured-image-row) {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .blogviewer .make-buttons {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 

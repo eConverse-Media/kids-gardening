@@ -30,7 +30,8 @@ function closeSearch() {
 }
 
 function handleFundingOpportunities() {
-    $('.funding-opportunities ul li, .featured-opportunities ul li').each(function () {
+    $('.memberhome .funding-opportunities ul li').each(function () {
+
         // Grab href for each news item
         var self = $(this),
             title = $(self).find("h3"),
@@ -227,20 +228,10 @@ function handleEvents() {
     });
 }
 
-function handleFeaturedOpportunities() {
-    $('.featured-opportunities ul li').each(function () {
-        var self = $(this),
-            link = $(self).find('.showMoreLink');
-
-        $(link).appendTo($(self).find('.text-container'));
-    });
-}
-
 $(function () {
     handleTopTextLinks();
     handleSearch();
     handleFundingOpportunities();
     handleResources();
     handleEvents();
-    handleFeaturedOpportunities();
 });
