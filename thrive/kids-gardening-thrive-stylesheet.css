@@ -814,6 +814,10 @@ body.ribbit #RibbitWelcome .Login {
     color: #fff;
     margin-left: 30px;
 }
+.profile-snippet-card.hl-widget-card .profile-snippet-bio > div.font-size-sm,
+.profile-snippet-card.hl-widget-card .profile-snippet-bio > div.mt-2:last-child {
+    display: none;
+}
 
 /*** progress ***/
 
