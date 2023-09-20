@@ -355,10 +355,10 @@ body.ribbit:not(.interior).bodyBackground {
     background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Background_Images/footer-wave.svg');
 }
 #MPOuterMost #MPOuter .bg-purple {
-    background: linear-gradient(54deg, #5E257C 0%, #9747FF 100%);
+    background: linear-gradient(81deg, #5E257C 36.36%, #8139CB 100.7%);;
     padding-top: 40px;
 }
-#MPOuterMost  .row-wide > div[class*="col-md-"][class*="section"] {
+#MPOuterMost #MPOuter .row-wide > div[class*="col-md-"][class*="section"] {
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -736,7 +736,8 @@ body.ribbit #RibbitWelcome .Login {
 /************ removing extraneous padding ************/
 
 #MPOuterMost #MPOuter .row-wide:not([class*="v-padding"]) {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 /************ member dashboard ************/
@@ -1637,6 +1638,9 @@ body.ribbit .community-list .btn-community-stats-static:is(:hover, :focus),
     justify-content: flex-end;
     margin: -5px;
     flex-wrap: wrap;
+}
+body.ribbit.interior .community-list > .col-md-5 > .row[id*="EnterJoin"] .pull-right {
+    margin: 0;
 }
 body.ribbit .community-list .btn-community-stats-static .badge {
     background: transparent;
@@ -2597,6 +2601,12 @@ body.ribbit .featured-opportunities h5 {
 
 /************ interior pages ************/
 
+/****** page titles ******/
+
+#PageTitleH1 {
+    padding-left: 15px;
+}
+
 /****** rounded images ******/
 
 body.ribbit #MessageListContainer .col-sm-2 .form-group a img,
@@ -2689,6 +2699,98 @@ body.ribbit.blogviewer .blogs-block>div>.row:not(.blog-featured-image-row) {
 body.ribbit.profile #MainCopy_ContentWrapper>.row:first-child>.col-md-3 {
     background-color: var(--ui-white-grey);
 }
+body.ribbit.profile ul[id$=_ProfileTabList]>li:hover {
+    border-bottom-color: var(--primary-purple);
+}
+
+/************ all groups page ************/
+
+.community-list p[id*="pStatLastJoined"] small {
+    margin-left: -8px;
+}
+
+/************ community landing page ************/
+
+body.ribbit.interior #MainCopy_ContentWrapper>.row>div[class*=col-md-]>div[class*=Content] .HLLandingControl .row {
+    padding-left: 0;
+    padding-right: 0;
+}
+body.ribbit .community-tabs-container .community-tabs-actions>*:last-child {
+    margin-right: 0;
+}
+body.ribbit .community-tabs-container-outer .community-tabs-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.groupdetails .ContentUserControl + .ContentUserControl {
+    margin-top: 15px;
+}
+.interior .HLDiscussions ul li .title-row {
+    margin-bottom: 10px;
+}
+body.ribbit #MainCopy_ContentWrapper>.row>div[class*=col-md-]>div[class*=Content] .HLLandingControl.HLEngagement {
+    border-radius: 0;
+    border-top: none;
+}
+.HLLandingControl .Content ul li .title-row .col-md-2,
+.HLLandingControl .Content ul li .title-row .col-md-3 {
+    width: 50px;
+    margin-right: 15px;
+    float: left;
+    padding: 0;
+}
+.HLLandingControl .Content ul li .title-row .col-md-10,
+.HLLandingControl .Content ul li .title-row .col-md-9 {
+    width: calc(100% - 65px);
+    float: left;
+    padding: 0;
+}
+
+/************ fixing backgrounds and buttons ************/
+
+body.ribbit .community-tabs-container-outer,
+body.ribbit div.alert.alert-warning {
+    background-color: var(--ui-white-grey);
+}
+body.ribbit .community-tabs-container-outer .btn.btn-default,
+body.ribbit div.alert.alert-warning .btn.btn-default {
+    color: var(--ui-black);
+    border-color: var(--ui-black);
+    background: transparent;
+}
+body.ribbit .community-tabs-container-outer .btn.btn-default:is(:hover, :focus),
+body.ribbit div.alert.alert-warning .btn.btn-default:is(:hover, :focus) {
+    color: #fff;
+    background-color: var(--ui-black);
+    border-color: var(--ui-black);
+}
+
+/************ ============ TEMP FOR TESTING ============ ************/
+
+/* #MPOuterMost::before,
+#MPOuterMost::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    border-left: 2px solid red;
+    display: block;
+    z-index: 9999;
+}
+#MPOuterMost::before {
+    left: calc(50% - 585px);
+}
+#MPOuterMost::after {
+    right: calc(50% - 585px);
+}
+@media (max-width: 1200px) {
+    #MPOuterMost::before {
+        left: 15px;
+    }
+    #MPOuterMost::after {
+        right: 15px;
+    }
+} */
 
 /************ footer ************/
 
@@ -2861,6 +2963,11 @@ body.ribbit.memberhome #FOOTER {
     .home .hero-slider .slick-arrow.prev-arrow {
         right: calc(50% + 90px);
     }
+    .allcommunities .ContentUserControl > div > div[id*="UpdatePanel"] > .row,
+    .mycommunities .ContentUserControl > div > div[id*="UpdatePanel"] > .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -2891,6 +2998,26 @@ body.ribbit.memberhome #FOOTER {
         padding-top: 0;
         padding-bottom: 0;
     }
+
+    .community-list > .col-md-7,
+    .community-list > .col-md-5 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .interior .community-list .col-md-5 .pull-right {
+        float: none !important;
+    }
+    .allcommunities div[id*="CommunityFilter"],
+    .mycommunities div[id*="CommunityFilter"] {
+        margin: -5px;
+    }
+    .allcommunities div[id*="CommunityFilter"] .form-group,
+    .mycommunities div[id*="CommunityFilter"] .form-group {
+        margin: 5px;
+    }
+
+    /************ hamburger nav ************/
+
     .navbar-header {
         float: none;
     }
@@ -3031,6 +3158,11 @@ body.ribbit.memberhome #FOOTER {
         width: 100%;
         margin-left: 0;
         margin-bottom: 30px;
+    }
+    .allcommunities .ContentUserControl > div > div[id*="UpdatePanel"] > .row,
+    .mycommunities .ContentUserControl > div > div[id*="UpdatePanel"] > .row {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
