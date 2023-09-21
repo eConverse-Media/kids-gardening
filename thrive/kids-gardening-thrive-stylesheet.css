@@ -132,6 +132,10 @@ body.ribbit .bootstrap-4 .btn-link:is(:hover, :focus),
 body.ribbit .bootstrap-4 .btn-link:is(:hover, :focus):not(:disabled) {
     background: transparent;
 }
+body.ribbit .bootstrap-4 a.dropdown-item:is(:hover, :focus),
+body.ribbit .bootstrap-4 a.dropdown-item:is(:hover, :focus):not(:disabled) {
+    text-decoration: none;
+}
 
 a,
 a:is(:hover, :focus),
@@ -184,7 +188,6 @@ body.ribbit .bootstrap-4 .page-link {
 .make-buttons em a {
     display: inline-block;
     margin: 5px;
-    text-decoration: none;
     font-style: normal;
 }
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink {
@@ -194,19 +197,34 @@ body.ribbit .bootstrap-4 .page-link {
 }
 .make-buttons em a,
 .btn,
+body.ribbit .bootstrap-4 .btn,
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
 #MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default {
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 17px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
     padding: 12px 20px;
     border: 1px solid;
     border-radius: 40px;
+    text-decoration: none;
+}
+body.ribbit .bootstrap-4 .btn,
+body.ribbit .bootstrap-4 .btn:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn:is(:hover, :focus):not(:disabled) {
+    text-decoration: none;
+}
+body.ribbit .bootstrap-4 .btn.form-control {
+    padding: 0 20px 0 0;
+    text-transform: none;
+    letter-spacing: 0;
+    border-radius: 0;
+    font-weight: 400;
 }
 .make-buttons.small em a,
-body.ribbit .btn.btn-sm {
+body.ribbit .btn.btn-sm,
+body.ribbit .bootstrap-4 .btn.btn-sm {
     padding: 5px 12px;
     font-size: 15px;
     font-style: normal;
@@ -216,8 +234,12 @@ body.ribbit .btn.btn-sm {
     letter-spacing: 0;
     border-radius: 30px;
 }
+.bootstrap-4 .input-group .input-group-append > .btn {
+    padding: 7px 10px;
+}
 .make-buttons.xs em a,
-body.ribbit .btn.btn-xs {
+body.ribbit .btn.btn-xs,
+body.ribbit .bootstrap-4 .btn.btn-xs {
     padding: 2px 5px;
     border-radius: 4px;
     font-size: 10px;
@@ -228,6 +250,7 @@ body.ribbit .btn.btn-xs {
 .btn-primary,
 body.ribbit .btn-primary,
 body.ribbit .btn-primary.active,
+body.ribbit .bootstrap-4 .btn-primary,
 body.ribbit .btn.btn-success,
 body.ribbit .btn-success.active,
 body.ribbit .btn.btn-info,
@@ -236,7 +259,8 @@ body.ribbit .open .dropdown-toggle.btn-primary,
 body.ribbit .btn.btn-default[id*=btnDownload],
 body.ribbit .open .dropdown-toggle.btn-success,
 #MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default,
-body.ribbit.profile #MainCopy_ContentWrapper .btn-default {
+body.ribbit.profile #MainCopy_ContentWrapper .btn-default,
+#InteriorPageTitle .btn.btn-primary:is(:hover, :focus) {
     color: var(--ui-black);
     border-color: var(--ui-black);
     background: transparent;
@@ -245,6 +269,8 @@ body.ribbit.profile #MainCopy_ContentWrapper .btn-default {
 .make-buttons em a:is(:hover, :focus),
 .btn-primary:is(:hover, :focus),
 body.ribbit .btn-primary:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn-primary:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn-primary:is(:hover, :focus):not(:disabled),
 body.ribbit .btn-primary:is(:hover, :focus):not(:disabled),
 body.ribbit .btn-primary.active:is(:hover, :focus),
 body.ribbit .btn.btn-info:is(:hover, :focus),
@@ -252,7 +278,8 @@ body.ribbit .btn-info.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-primary:is(:hover, :focus),
 body.ribbit .btn.btn-default[id*=btnDownload]:is(:hover, :focus),
 #MPOuterMost #MPOuter .HLLandingControl div[id*="BottomLink"] .btn-default:is(:hover, :focus),
-body.ribbit.profile #MainCopy_ContentWrapper .btn-default:is(:hover, :focus) {
+body.ribbit.profile #MainCopy_ContentWrapper .btn-default:is(:hover, :focus),
+#InteriorPageTitle .btn.btn-primary {
     color: #fff;
     background-color: var(--ui-black);
     border-color: var(--ui-black);
@@ -260,6 +287,8 @@ body.ribbit.profile #MainCopy_ContentWrapper .btn-default:is(:hover, :focus) {
 
 .make-buttons.purple em a,
 body.ribbit .btn.btn-success,
+body.ribbit .modal-footer .btn-primary,
+body.ribbit .bootstrap-4 .btn.btn-success,
 body.ribbit .btn-success.active,
 body.ribbit .open .dropdown-toggle.btn-success,
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
@@ -272,6 +301,9 @@ body.ribbit .open .dropdown-toggle.btn-success,
 
 .make-buttons.purple em a:is(:hover, :focus),
 body.ribbit .btn.btn-success:is(:hover, :focus),
+body.ribbit .modal-footer .btn-primary:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn.btn-success:is(:hover, :focus),
+body.ribbit .bootstrap-4 .btn.btn-success:is(:hover, :focus):not(:disabled),
 body.ribbit .btn-success.active:is(:hover, :focus),
 body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus),
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink:is(:hover, :focus),
@@ -320,6 +352,18 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus),
     text-decoration: none;
 }
 
+/* multi-button border radii */
+
+div[id*="likeRatingContainer"] > .btn:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+div[id*="likeRatingContainer"] > .btn:last-child:not(:first-child),
+.bootstrap-4 .input-group .input-group-append > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 /****** row backgrounds and resets ******/
 
 .bg-grey,
@@ -365,6 +409,9 @@ body.ribbit:not(.interior).bodyBackground {
 body.ribbit .row-wide {
     padding-left: 0;
     padding-right: 0;
+}
+body.ribbit.interior #MainCopy_ContentWrapper.no-top-pad {
+    padding-top: 0;
 }
 
 /****** margins ******/
@@ -2746,23 +2793,81 @@ body.ribbit #MainCopy_ContentWrapper>.row>div[class*=col-md-]>div[class*=Content
     padding: 0;
 }
 
+/****** thread view ******/
+
+.DiscussionContentContainer .digitalRibbonDisplay div {
+    margin-bottom: 10px;
+}
+#top-top .col-md-12,
+#top-top div[class*="col-md-"]:first-child {
+    padding-left: 0;
+}
+#top-top .col-md-12,
+#top-top div[class*="col-md-"]:last-child {
+    padding-right: 0;
+}
+#top-top a[id*="backButton"] {
+    margin-top: 0;
+}
+#top-top .col-md-6:last-child > .input-group.pull-right {
+    display: flex;
+    float: none !important;
+    justify-content: end;
+    align-items: center;
+}
+#DiscussionOutlineContainer > .list-group-item {
+    padding-left: 0;
+}
+
 /************ fixing backgrounds and buttons ************/
 
 body.ribbit .community-tabs-container-outer,
-body.ribbit div.alert.alert-warning {
+body.ribbit div.alert.alert-warning,
+body.ribbit .panel-form,
+body.ribbit .modal-footer {
     background-color: var(--ui-white-grey);
 }
 body.ribbit .community-tabs-container-outer .btn.btn-default,
-body.ribbit div.alert.alert-warning .btn.btn-default {
+body.ribbit div.alert.alert-warning .btn.btn-default,
+body.ribbit .panel-form .btn.btn-default,
+body.ribbit .modal-footer .btn.btn-default {
     color: var(--ui-black);
     border-color: var(--ui-black);
     background: transparent;
 }
 body.ribbit .community-tabs-container-outer .btn.btn-default:is(:hover, :focus),
-body.ribbit div.alert.alert-warning .btn.btn-default:is(:hover, :focus) {
+body.ribbit div.alert.alert-warning .btn.btn-default:is(:hover, :focus),
+body.ribbit .panel-form .btn.btn-default:is(:hover, :focus),
+body.ribbit .modal-footer .btn.btn-default:is(:hover, :focus) {
     color: #fff;
     background-color: var(--ui-black);
     border-color: var(--ui-black);
+}
+
+/************ fix for Bootstrap update ************/
+
+body.ribbit .col-md-12 {
+    float: none;
+}
+
+/************ upcoming events page ************/
+
+.event-list-item > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.emcalendar .form-group.row > .col-sm-12.col-md-12.col-lg-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+div[id*="EventCountContainer"].col-md-9 {
+    padding-left: 0;
+}
+div[id*="EventCountContainer"].col-md-9 + .col-md-3 {
+    padding-right: 0;
+}
+div[id*="EventListFilter"] {
+    border-bottom: none;
 }
 
 /************ ============ TEMP FOR TESTING ============ ************/
@@ -2812,7 +2917,7 @@ body.ribbit.memberhome #FOOTER {
     padding: 0;
 }
 #MPOuterMost #MPOuterFooter .footer-top-row {
-    padding: 50px 15px;
+    padding: 50px 8px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -2922,6 +3027,10 @@ body.ribbit.memberhome #FOOTER {
     #MPOuterMost #MPOuter .event-wrapper .HLLandingControl div[id*="BottomLink"] {
         left: 15px;
     }
+    .related-results-container h2 {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 }
 
 @media (max-width: 1215px) {
@@ -2967,6 +3076,9 @@ body.ribbit.memberhome #FOOTER {
     .mycommunities .ContentUserControl > div > div[id*="UpdatePanel"] > .row {
         margin-left: -15px;
         margin-right: -15px;
+    }
+    .nested-community .col-md-12 {
+        padding: 0;
     }
 }
 
@@ -3014,6 +3126,29 @@ body.ribbit.memberhome #FOOTER {
     .allcommunities div[id*="CommunityFilter"] .form-group,
     .mycommunities div[id*="CommunityFilter"] .form-group {
         margin: 5px;
+    }
+    #MPOuterMost #MPOuterFooter .footer-top-row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .entry-title.title-row-background {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .entry-title.title-row-background h2 {
+        margin-top: 0;
+    }
+    .entry-title.title-row-background .col-md-4 > .text-right {
+        text-align: left;
+        display: flex;
+    }
+    .entry-title.title-row-background .col-md-4 > .text-right > .col-md-6:first-child {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+    .entry-title.title-row-background .col-md-4 > .text-right > .col-md-6:last-child {
+        padding-left: 15px;
+        padding-right: 0;
     }
 
     /************ hamburger nav ************/
@@ -3163,6 +3298,16 @@ body.ribbit.memberhome #FOOTER {
     .mycommunities .ContentUserControl > div > div[id*="UpdatePanel"] > .row {
         margin-left: 0;
         margin-right: 0;
+    }
+    .DiscussionContentContainer > li > .pnl-row-item {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .btn-group .btn + .btn {
+        margin-left: -4px;
+    }
+    #tblAdvanceSearch.panel {
+        padding: 10px 15px;
     }
 }
 
