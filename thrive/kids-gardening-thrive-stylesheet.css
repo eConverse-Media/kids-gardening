@@ -2945,33 +2945,6 @@ div[id*="EventListFilter"] {
     line-height: 25px;
 }
 
-/************ ============ TEMP FOR TESTING ============ ************/
-
-/* #MPOuterMost::before,
-#MPOuterMost::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    border-left: 2px solid red;
-    display: block;
-    z-index: 9999;
-}
-#MPOuterMost::before {
-    left: calc(50% - 585px);
-}
-#MPOuterMost::after {
-    right: calc(50% - 585px);
-}
-@media (max-width: 1200px) {
-    #MPOuterMost::before {
-        left: 15px;
-    }
-    #MPOuterMost::after {
-        right: 15px;
-    }
-} */
-
 /************ filtered libraries ************/
 
  /****** filtered libraries ******/
@@ -4014,6 +3987,48 @@ body.ribbit.memberhome #FOOTER {
 }
 .footer-bottom-row p {
     margin-bottom: 0;
+}
+
+/************ style guide ************/
+
+.highlight-card {
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(13, 45, 75, 0.04), 0px 10px 20px 5px rgba(13, 45, 75, 0.06);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.plain-table tr td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    border: solid;
+    border-width: 1px;
+    background-color: #FFF;
+    border-color: #EDEDED;
+}
+.plain-table th {
+    padding: 10px 15px;
+    vertical-align: middle;
+    color: inherit;
+    background-color: #FaFaFa;
+    border: 1px solid #f5f5f5;
+}
+.plain-table tr:nth-child(2n) {
+    border-bottom: 1px solid #EDEDED;
+    background: #FFF;
+}
+.style-guide .HtmlContent img,
+.style-guide .HtmlContent table {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.style-guide .content-tile.featured-member .HtmlContent img { /* re-setting the image styling for the featured member example */
+    margin-top: -80px;
+    margin-bottom: 0;
+}
+body.interior.style-guide .ContentItemHtml h2,
+body.interior.style-guide .ContentItemHtml h3 {
+    margin-top: 0;
 }
 
 /************ responsive ************/
