@@ -4031,6 +4031,20 @@ body.interior.style-guide .ContentItemHtml h3 {
     margin-top: 0;
 }
 
+/************ interior page titles ************/
+
+#InteriorPageTitle {
+    background-image: url('https://higherlogicdownload.s3.amazonaws.com/KIDSGARDEN/865de640-2eb7-431b-9d9d-cdc82b516cc9/UploadedImages/Dev/page-title-bg-full.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#RibbitBanner_MPInnerPageSVGBanner {
+    background: linear-gradient(81deg, rgba(94, 37, 124, 0.90) 36.36%, rgba(151, 71, 255, 0.90) 142.85%);
+}
+#RibbitPageTitle_Svg {
+    display: none;
+}
+
 /************ responsive ************/
 
 @media (max-width: 1280px) {
