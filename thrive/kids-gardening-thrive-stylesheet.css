@@ -266,7 +266,7 @@ body.ribbit .open .dropdown-toggle.btn-success,
 body.ribbit.profile #MainCopy_ContentWrapper .btn-default,
 #InteriorPageTitle .btn.btn-primary:is(:hover, :focus) {
     color: var(--ui-black);
-    border-color: var(--ui-black);
+    border: 1px solid var(--ui-black);
     background: transparent;
 }
 
@@ -286,7 +286,7 @@ body.ribbit.profile #MainCopy_ContentWrapper .btn-default:is(:hover, :focus),
 #InteriorPageTitle .btn.btn-primary {
     color: #fff;
     background-color: var(--ui-black);
-    border-color: var(--ui-black);
+    border: 1px solid var(--ui-black);
 }
 
 .make-buttons.purple em a,
@@ -300,7 +300,7 @@ body.ribbit .open .dropdown-toggle.btn-success,
 #CreateBtnWrapper .btn-primary,
 #RibbitWelcome .Login .btn-primary {
     color: #fff;
-    border-color: var(--primary-purple);
+    border: 1px solid var(--primary-purple);
     background-color: var(--primary-purple);
 }
 
@@ -317,32 +317,32 @@ body.ribbit .open .dropdown-toggle.btn-success:is(:hover, :focus),
 #RibbitWelcome .Login .btn-primary:is(:hover, :focus) {
     background-color: transparent;
     color: var(--primary-purple);
-    border-color: var(--primary-purple);
+    border: 1px solid var(--primary-purple);
 }
 
 .make-buttons.grey em a,
 .btn-default {
     color: var(--ui-black);
     background-color: var(--ui-white-grey);
-    border-color: var(--ui-white-grey);
+    border: 1px solid var(--ui-white-grey);
 }
 
 .make-buttons.grey em a:is(:hover, :focus),
 .btn-default:is(:hover, :focus) {
     color: var(--ui-black);
     background-color: var(--ui-light-grey);
-    border-color: var(--ui-light-grey);
+    border: 1px solid var(--ui-light-grey);
 }
 
 .make-buttons.white em a {
     color: #fff;
     background: transparent;
-    border-color: #fff;
+    border: 1px solid #fff;
 }
 
 .make-buttons.white em a:is(:hover, :focus) {
     background-color: #fff;
-    border-color: #fff;
+    border: 1px solid #fff;
     color: var(--primary-purple);
 }
 
@@ -3423,7 +3423,8 @@ body.ribbit .grid .content-tags {
 }
 
 .grid .content-tags a.label-search-tag,
-.hltags .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable,
+.grid .hltags .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable,
+.filtered-grants .hltags .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable,
 .featured.resources a.user-content-hashtag,
 .grid a.user-content-hashtag,
 .featured.grants a.user-content-hashtag,
@@ -3454,21 +3455,27 @@ body.ribbit .grid .content-tags {
     display: inline-block;
 }
 
-.hltags .ui-state-default a,
-.hltags .ui-state-default a:link,
-.hltags .ui-state-default a:visited {
+.grid .hltags .ui-state-default a,
+.grid .hltags .ui-state-default a:link,
+.grid .hltags .ui-state-default a:visited,
+.filtered-grants .hltags .ui-state-default a,
+.filtered-grants .hltags .ui-state-default a:link,
+.filtered-grants .hltags .ui-state-default a:visited {
     color: #fff;
 }
 
-ul.tagit li.tagit-choice .tagit-close {
+.grid ul.tagit li.tagit-choice .tagit-close,
+.filtered-grants ul.tagit li.tagit-choice .tagit-close {
     top: 42%;
 }
 
-ul.tagit li.tagit-choice .tagit-close .text-icon {
+.grid ul.tagit li.tagit-choice .tagit-close .text-icon,
+.filtered-grants ul.tagit li.tagit-choice .tagit-close .text-icon {
     color: #fff;
 }
 
-.hltags .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable {
+.grid .hltags .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable,
+.filtered-grants .hltags .tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable {
     padding-right: 15px;
 }
 
@@ -3833,6 +3840,7 @@ body.ribbit .text-center.resource-title h2 {
     text-decoration: none;
     background-color: #98022C;
     transition: 0.3s;
+    margin: 3px 0 3px 5px;
 }
 
 .filtered-grants .blogs-block .content-tags .flex-tag-container>span {
