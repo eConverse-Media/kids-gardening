@@ -199,6 +199,7 @@ body.ribbit .bootstrap-4 .page-link {
     text-decoration: none;
 }
 .make-buttons em a,
+.viewdocument a[id*="URL"],
 .btn,
 body.ribbit .bootstrap-4 .btn,
 #MPOuterMost #MPOuter .featured-opportunities ul li .showMoreLink,
@@ -251,6 +252,7 @@ body.ribbit .bootstrap-4 .btn.btn-xs {
 }
 
 .make-buttons em a,
+.viewdocument a[id*="URL"],
 .btn-primary,
 body.ribbit .btn-primary,
 body.ribbit .btn-primary.active,
@@ -271,6 +273,7 @@ body.ribbit.profile #MainCopy_ContentWrapper .btn-default,
 }
 
 .make-buttons em a:is(:hover, :focus),
+.viewdocument a[id*="URL"]:is(:hover, :focus),
 .btn-primary:is(:hover, :focus),
 body.ribbit .btn-primary:is(:hover, :focus),
 body.ribbit .bootstrap-4 .btn-primary:is(:hover, :focus),
