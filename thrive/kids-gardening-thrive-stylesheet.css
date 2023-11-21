@@ -1128,6 +1128,7 @@ body.ribbit #RibbitWelcome .Login {
     border-top: 11px solid;
     padding: 25px 20px 20px 20px;
     text-align: center;
+    height: 120px;
 }
 .link-card a:is(:hover, :focus) {
     transform: translateY(-6px);
@@ -3080,8 +3081,6 @@ body.ribbit .row-wide.bg-green {
 .library-content .selected-filters {
     margin-top: 30px;
 }
-
-.featured-resources.title {}
 
 /* filters */
 
